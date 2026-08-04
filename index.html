@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Sawyer Van Zanten — software, computational biology, chemistry, and AI." />
-  <title>Sawyer Van Zanten</title>
+  <meta name="description" content="Sawyer VanZanten — software, computational biology, chemistry, and AI." />
+  <title>Sawyer VanZanten</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
@@ -12,7 +12,7 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="name" href="#top">Sawyer Van Zanten</a>
+      <a class="name" href="#top">Sawyer VanZanten</a>
       <nav aria-label="Primary navigation">
         <a href="#work">Work</a>
         <a href="#research">Research</a>
@@ -24,113 +24,62 @@
 
   <main id="top" class="container">
     <section class="intro">
-      <h1>Sawyer Van Zanten</h1>
-      <p>I build software and work on research in computational biology, chemistry, and AI.</p>
-      <p class="intro-links">
-        <a href="mailto:sawyervanzanten@gmail.com">Email</a>
-        <span>·</span>
-        <a href="https://github.com/recant" target="_blank" rel="noreferrer">GitHub</a>
-      </p>
+      <div>
+        <h1>Sawyer VanZanten</h1>
+        <p>I build software and work on research in computational biology, chemistry, and AI.</p>
+        <p class="intro-links"><a href="mailto:sawyervanzanten@gmail.com">Email</a><span>·</span><a href="https://github.com/recant" target="_blank" rel="noreferrer">GitHub</a></p>
+      </div>
+      <div class="intro-art" aria-hidden="true">
+        <svg viewBox="0 0 360 220" role="img">
+          <rect width="360" height="220" rx="12" fill="#eef3f0"/>
+          <path d="M22 172C70 143 92 93 140 112s58 45 95 15 55-83 103-78" fill="none" stroke="#234f3e" stroke-width="4"/>
+          <circle cx="61" cy="149" r="9" fill="#f29d64"/><circle cx="140" cy="112" r="9" fill="#f29d64"/><circle cx="235" cy="127" r="9" fill="#f29d64"/><circle cx="319" cy="57" r="9" fill="#f29d64"/>
+          <g fill="#234f3e" font-family="Arial" font-size="12"><text x="28" y="33">software</text><text x="130" y="83">chemistry</text><text x="234" y="157">biology</text><text x="291" y="31">AI</text></g>
+        </svg>
+      </div>
     </section>
 
     <section id="work" class="section">
-      <div class="section-title-row">
-        <h2>Projects</h2>
-        <p>Things I have built or prototyped.</p>
-      </div>
-
+      <div class="section-title-row"><h2>Projects</h2><p>Things I have built or prototyped.</p></div>
       <div class="list">
-        <article class="item">
+        <article class="item visual-item">
           <div class="item-meta">2026 · AI / education</div>
-          <div class="item-content">
-            <h3>Knowable</h3>
-            <p>A personalized learning app that turns a learning goal into a short structured course. It generates an 8–10 lesson dependency chain with explanations, interactive labs, predictions, and conceptual checks.</p>
-            <p class="tech">Gemini 2.5 Flash · TanStack Start · React · Cloudflare Workers · Every App</p>
-            <a href="https://github.com/recant/Knowable" target="_blank" rel="noreferrer">Repository →</a>
-          </div>
+          <div class="item-content"><h3>Knowable</h3><p>A personalized learning app that turns a learning goal into a short structured course. It generates an 8–10 lesson dependency chain with explanations, interactive labs, predictions, and conceptual checks.</p><p class="tech">Gemini 2.5 Flash · TanStack Start · React · Cloudflare Workers · Every App</p><a href="https://github.com/recant/Knowable" target="_blank" rel="noreferrer">Repository →</a></div>
+          <figure class="project-image knowable-image" aria-label="Stylized Knowable course interface"><div class="browser-bar"><i></i><i></i><i></i></div><strong>Learn molecular biology</strong><span class="lesson active">01 · DNA as information</span><span class="lesson">02 · Transcription</span><span class="lesson">03 · Translation</span><span class="lesson">04 · Regulation</span></figure>
         </article>
 
-        <article class="item">
+        <article class="item visual-item">
           <div class="item-meta">2026 · AI agents</div>
-          <div class="item-content">
-            <h3>CrushIt</h3>
-            <p>A goal agent that asks for an outcome once, then chooses one concrete action each morning. It can use connected context, send the directive, verify evidence, and apply a simulated commitment penalty when a deadline is missed.</p>
-            <p class="tech">Node.js · Maritime · OpenClaw · persistent agents</p>
-            <a href="https://github.com/recant/CrushIt" target="_blank" rel="noreferrer">Repository →</a>
-          </div>
+          <div class="item-content"><h3>CrushIt</h3><p>A goal agent that asks for an outcome once, then chooses one concrete action each morning. It can use connected context, send the directive, verify evidence, and apply a simulated commitment penalty when a deadline is missed.</p><p class="tech">Node.js · Maritime · OpenClaw · persistent agents</p><a href="https://github.com/recant/CrushIt" target="_blank" rel="noreferrer">Repository →</a></div>
+          <figure class="project-image directive-image" aria-label="Stylized daily directive"><small>TODAY'S ACTION</small><strong>Email three founders before 11 AM.</strong><div><span>Proof</span><b>3 sent messages</b></div><div><span>Time left</span><b>02:41:18</b></div></figure>
         </article>
 
-        <article class="item">
+        <article class="item visual-item">
           <div class="item-meta">Prototype · on-device AI</div>
-          <div class="item-content">
-            <h3>WildAI</h3>
-            <p>An offline wilderness assistant. It uses a phone camera to identify gear and surroundings, then produces step-by-step guidance with a small vision-language model running locally.</p>
-            <p class="tech">React Native · llama.cpp · vision-language models</p>
-            <span class="muted">Private prototype</span>
-          </div>
+          <div class="item-content"><h3>WildAI</h3><p>An offline wilderness assistant. It uses a phone camera to identify gear and surroundings, then produces step-by-step guidance with a small vision-language model running locally.</p><p class="tech">React Native · llama.cpp · vision-language models</p><span class="muted">Private prototype</span></div>
+          <figure class="project-image wild-image" aria-label="Stylized offline wilderness assistant"><svg viewBox="0 0 320 190"><rect width="320" height="190" fill="#dbe8e0"/><path d="M0 155L75 75l53 54 55-74 137 135H0z" fill="#50745f"/><path d="M0 169l87-62 54 38 62-58 117 103H0z" fill="#294d3c"/><rect x="32" y="27" width="74" height="28" rx="4" fill="none" stroke="#fff" stroke-width="2"/><text x="45" y="46" fill="#fff" font-family="Arial" font-size="13">BACKPACK</text><rect x="204" y="98" width="58" height="28" rx="4" fill="none" stroke="#fff" stroke-width="2"/><text x="217" y="117" fill="#fff" font-family="Arial" font-size="13">TENT</text></svg><span class="offline-badge">OFFLINE</span></figure>
         </article>
 
-        <article class="item">
+        <article class="item visual-item">
           <div class="item-meta">2026 · longevity hackathon</div>
-          <div class="item-content">
-            <h3>Longevitree</h3>
-            <p>A prototype for at-home functional aging check-ins using reaction time, walking pace, and sit-to-stand tests. It estimates functional aging signals and links them to evidence-backed, non-medication interventions.</p>
-            <p class="tech">Python · FastAPI · functional aging</p>
-            <a href="https://github.com/recant/longevityhackathon" target="_blank" rel="noreferrer">Repository →</a>
-          </div>
+          <div class="item-content"><h3>Longevitree</h3><p>A prototype for at-home functional aging check-ins using reaction time, walking pace, and sit-to-stand tests. It estimates functional aging signals and links them to evidence-backed, non-medication interventions.</p><p class="tech">Python · FastAPI · functional aging</p><a href="https://github.com/recant/longevityhackathon" target="_blank" rel="noreferrer">Repository →</a></div>
+          <figure class="project-image age-image" aria-label="Stylized functional aging result"><div class="age-number"><small>FUNCTIONAL AGE</small><strong>42.7</strong><span>years</span></div><div class="age-bars"><span><i style="width:72%"></i>Reaction time</span><span><i style="width:58%"></i>Walking pace</span><span><i style="width:81%"></i>Sit-to-stand</span></div></figure>
         </article>
       </div>
     </section>
 
     <section id="research" class="section">
-      <div class="section-title-row">
-        <h2>Research</h2>
-        <p>Papers, abstracts, and proposals.</p>
-      </div>
-
+      <div class="section-title-row"><h2>Research</h2><p>Papers, abstracts, and proposals.</p></div>
       <div class="list">
-        <article class="item">
-          <div class="item-meta">ChemRxiv · 2025</div>
-          <div class="item-content">
-            <h3>Benchmarking OMol25-Trained Models on Experimental Reduction-Potential and Electron-Affinity Data</h3>
-            <p>With Corin Wagen. We benchmarked neural network potentials trained on Meta's OMol25 dataset against lower-cost quantum-chemical methods on experimental reduction-potential and electron-affinity data.</p>
-            <a href="https://doi.org/10.26434/chemrxiv-2025-3stpx" target="_blank" rel="noreferrer">Read preprint →</a>
-          </div>
-        </article>
-
-        <article class="item">
-          <div class="item-meta">ACS Fall 2026 · presenting</div>
-          <div class="item-content">
-            <h3>Machine learning optimization of a simple rule for predicting the sign of optical rotation of chiral compounds</h3>
-            <p>We assembled a Reaxys-derived dataset of about 13,000 compounds with one stereogenic center and experimentally reported optical-rotation signs, then used machine-learning optimization to improve and evaluate a simple substituent-ranking rule.</p>
-          </div>
-        </article>
-
-        <article class="item">
-          <div class="item-meta">Research proposal · aging</div>
-          <div class="item-content">
-            <h3>Selective viral targeting and clearance of senescent cells</h3>
-            <p>A proposed strategy for selectively killing senescent cells using uPAR-targeted viral infection, GLB1-driven cargo expression, and siRNA knockdown of candidate senescent-cell anti-apoptotic genes.</p>
-            <button class="details-button" type="button" aria-expanded="false" aria-controls="proposal-details">More details</button>
-            <div id="proposal-details" class="details" hidden>
-              <p>The proposal has three aims: test uPAR as a selective infection target, test the GLB1 promoter for selective expression in senescent cells, and rank 18 SCAP-associated genes by how strongly their knockdown induces apoptosis in senescent versus non-senescent cells.</p>
-            </div>
-          </div>
-        </article>
+        <article class="item"><div class="item-meta">ChemRxiv · 2025</div><div class="item-content"><h3>Benchmarking OMol25-Trained Models on Experimental Reduction-Potential and Electron-Affinity Data</h3><p>With Corin Wagen. We benchmarked neural network potentials trained on Meta's OMol25 dataset against lower-cost quantum-chemical methods on experimental reduction-potential and electron-affinity data.</p><a href="https://doi.org/10.26434/chemrxiv-2025-3stpx" target="_blank" rel="noreferrer">Read preprint →</a></div></article>
+        <article class="item"><div class="item-meta">ACS Fall 2026 · presenting</div><div class="item-content"><h3>Machine learning optimization of a simple rule for predicting the sign of optical rotation of chiral compounds</h3><p>We assembled a Reaxys-derived dataset of about 13,000 compounds with one stereogenic center and experimentally reported optical-rotation signs, then used machine-learning optimization to improve and evaluate a simple substituent-ranking rule.</p></div></article>
+        <article class="item"><div class="item-meta">Research proposal · aging</div><div class="item-content"><h3>Selective viral targeting and clearance of senescent cells</h3><p>A proposed strategy for selectively killing senescent cells using uPAR-targeted viral infection, GLB1-driven cargo expression, and siRNA knockdown of candidate senescent-cell anti-apoptotic genes.</p><button class="details-button" type="button" aria-expanded="false" aria-controls="proposal-details">More details</button><div id="proposal-details" class="details" hidden><p>The proposal has three aims: test uPAR as a selective infection target, test the GLB1 promoter for selective expression in senescent cells, and rank 18 SCAP-associated genes by how strongly their knockdown induces apoptosis in senescent versus non-senescent cells.</p></div></div></article>
       </div>
     </section>
 
-    <section id="about" class="section about">
-      <div class="section-title-row">
-        <h2>About</h2>
-      </div>
-      <p>I am interested in computational biology, longevity, chemistry, and software. I like projects where I can learn a field by building something concrete.</p>
-    </section>
+    <section id="about" class="section about"><div class="section-title-row"><h2>About</h2></div><p>I am interested in computational biology, longevity, chemistry, and software. I like projects where I can learn a field by building something concrete.</p></section>
   </main>
 
-  <footer class="container footer">
-    <span>© <span id="year"></span> Sawyer Van Zanten</span>
-    <a href="mailto:sawyervanzanten@gmail.com">sawyervanzanten@gmail.com</a>
-  </footer>
+  <footer class="container footer"><span>© <span id="year"></span> Sawyer VanZanten</span><a href="mailto:sawyervanzanten@gmail.com">sawyervanzanten@gmail.com</a></footer>
 </body>
 </html>
