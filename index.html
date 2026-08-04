@@ -3,539 +3,231 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Sawyer Van Zanten — projects and research in AI, biology, learning, and human performance." />
-  <meta name="theme-color" content="#f4f0e8" />
+  <meta name="description" content="Sawyer Van Zanten — software, AI, chemistry, and longevity research." />
+  <meta name="theme-color" content="#0b0d0c" />
   <title>Sawyer Van Zanten</title>
-  <style>
-    :root {
-      --paper: #f4f0e8;
-      --paper-2: #ece6da;
-      --ink: #171714;
-      --muted: #6e6a62;
-      --line: rgba(23, 23, 20, 0.16);
-      --card: rgba(255, 255, 255, 0.48);
-      --green: #245a46;
-      --blue: #254e70;
-      --rust: #8a4935;
-      --violet: #604f79;
-      --max: 1180px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at 78% 12%, rgba(36, 90, 70, 0.09), transparent 28rem),
-        radial-gradient(circle at 11% 42%, rgba(138, 73, 53, 0.07), transparent 25rem),
-        var(--paper);
-      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.55;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.045;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.88' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
-      mix-blend-mode: multiply;
-      z-index: 10;
-    }
-
-    a { color: inherit; }
-    ::selection { background: rgba(36, 90, 70, 0.18); }
-
-    .wrap {
-      width: min(calc(100% - 40px), var(--max));
-      margin: 0 auto;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(244, 240, 232, 0.82);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    nav {
-      min-height: 68px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .mark {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-      text-decoration: none;
-    }
-
-    .navlinks {
-      display: flex;
-      gap: 22px;
-      font-size: 13px;
-    }
-
-    .navlinks a {
-      color: var(--muted);
-      text-decoration: none;
-    }
-
-    .navlinks a:hover { color: var(--ink); }
-
-    header {
-      padding: 116px 0 94px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .eyebrow,
-    .section-label,
-    .kicker {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 11px;
-      line-height: 1.35;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow { color: var(--green); margin-bottom: 24px; }
-
-    h1,
-    .display {
-      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-      font-weight: 500;
-      letter-spacing: -0.045em;
-    }
-
-    h1 {
-      margin: 0;
-      max-width: 930px;
-      font-size: clamp(62px, 9vw, 126px);
-      line-height: 0.88;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.7fr 0.8fr;
-      gap: 56px;
-      align-items: end;
-      margin-top: 56px;
-    }
-
-    .intro {
-      margin: 0;
-      max-width: 720px;
-      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-      font-size: clamp(23px, 2.4vw, 34px);
-      line-height: 1.3;
-      letter-spacing: -0.02em;
-    }
-
-    .hero-note {
-      color: var(--muted);
-      font-size: 14px;
-      max-width: 310px;
-      margin: 0;
-    }
-
-    section {
-      padding: 88px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: 0.46fr 1.54fr;
-      gap: 36px;
-      margin-bottom: 44px;
-      align-items: start;
-    }
-
-    .section-label { color: var(--muted); padding-top: 9px; }
-
-    .section-title {
-      margin: 0;
-      max-width: 800px;
-      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-      font-size: clamp(38px, 5vw, 68px);
-      line-height: 1.02;
-      font-weight: 500;
-      letter-spacing: -0.035em;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 16px;
-    }
-
-    .project {
-      position: relative;
-      grid-column: span 6;
-      min-height: 390px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 28px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: var(--card);
-      overflow: hidden;
-      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
-    }
-
-    .project:hover {
-      transform: translateY(-3px);
-      background: rgba(255,255,255,0.68);
-      border-color: rgba(23,23,20,0.28);
-    }
-
-    .project.feature { grid-column: span 8; min-height: 430px; }
-    .project.side { grid-column: span 4; min-height: 430px; }
-
-    .project::after {
-      content: "";
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      border-radius: 999px;
-      right: -70px;
-      top: -70px;
-      background: var(--wash, rgba(36,90,70,.12));
-      filter: blur(2px);
-      pointer-events: none;
-    }
-
-    .project[data-tone="blue"] { --wash: rgba(37,78,112,.14); }
-    .project[data-tone="rust"] { --wash: rgba(138,73,53,.14); }
-    .project[data-tone="violet"] { --wash: rgba(96,79,121,.14); }
-
-    .project-top { position: relative; z-index: 1; }
-    .kicker { color: var(--muted); margin-bottom: 28px; }
-
-    .project h3 {
-      margin: 0 0 14px;
-      max-width: 620px;
-      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-      font-size: clamp(32px, 3.6vw, 52px);
-      line-height: 1.02;
-      font-weight: 500;
-      letter-spacing: -0.035em;
-    }
-
-    .project p {
-      margin: 0;
-      max-width: 650px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.65;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-top: 22px;
-    }
-
-    .tag {
-      padding: 5px 9px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--muted);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 10px;
-      letter-spacing: 0.04em;
-    }
-
-    .project-link {
-      position: relative;
-      z-index: 1;
-      display: inline-flex;
-      align-items: center;
-      width: fit-content;
-      gap: 8px;
-      margin-top: 36px;
-      padding-bottom: 3px;
-      border-bottom: 1px solid currentColor;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 650;
-    }
-
-    .project-link span { transition: transform 160ms ease; }
-    .project-link:hover span { transform: translate(3px, -2px); }
-
-    .research-list {
-      border-top: 1px solid var(--line);
-    }
-
-    .research-item {
-      display: grid;
-      grid-template-columns: 150px 1fr auto;
-      gap: 32px;
-      align-items: start;
-      padding: 30px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .research-meta {
-      color: var(--muted);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 10px;
-      line-height: 1.55;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-    }
-
-    .research-copy h3 {
-      margin: 0 0 9px;
-      max-width: 760px;
-      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-      font-size: clamp(27px, 3vw, 42px);
-      line-height: 1.08;
-      font-weight: 500;
-      letter-spacing: -0.025em;
-    }
-
-    .research-copy p {
-      margin: 0;
-      max-width: 760px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.65;
-    }
-
-    .research-action {
-      align-self: center;
-      white-space: nowrap;
-      font-size: 12px;
-      font-weight: 700;
-      text-decoration: none;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 9px 13px;
-      transition: background 160ms ease;
-    }
-
-    .research-action:hover { background: rgba(255,255,255,.55); }
-    .research-action.static { color: var(--muted); font-weight: 500; }
-
-    .statement {
-      display: grid;
-      grid-template-columns: 1.4fr 0.6fr;
-      gap: 60px;
-      align-items: end;
-    }
-
-    .statement p {
-      margin: 0;
-      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-      font-size: clamp(34px, 5vw, 72px);
-      line-height: 1.04;
-      letter-spacing: -0.035em;
-    }
-
-    .side-note {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    footer { padding: 44px 0 70px; }
-
-    .footer-grid {
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      align-items: center;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .footer-grid a { color: var(--ink); text-decoration: none; }
-
-    @media (max-width: 860px) {
-      .hero-grid,
-      .section-head,
-      .statement { grid-template-columns: 1fr; }
-      .hero-grid { gap: 24px; }
-      .section-head { gap: 14px; }
-      .project,
-      .project.feature,
-      .project.side { grid-column: span 12; min-height: 340px; }
-      .research-item { grid-template-columns: 1fr; gap: 12px; }
-      .research-action { justify-self: start; }
-      header { padding-top: 80px; }
-    }
-
-    @media (max-width: 600px) {
-      .wrap { width: min(calc(100% - 26px), var(--max)); }
-      .navlinks { gap: 13px; font-size: 12px; }
-      .navlinks a:nth-child(2) { display: none; }
-      header { padding: 70px 0 68px; }
-      section { padding: 66px 0; }
-      .project { padding: 22px; border-radius: 14px; }
-      .footer-grid { align-items: flex-start; flex-direction: column; }
-    }
-  </style>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="topbar">
-    <div class="wrap">
-      <nav aria-label="Primary navigation">
-        <a class="mark" href="#top">SVZ / 2026</a>
-        <div class="navlinks">
-          <a href="#projects">Projects</a>
-          <a href="#research">Research</a>
-          <a href="https://github.com/recant" target="_blank" rel="noreferrer">GitHub ↗</a>
-        </div>
-      </nav>
-    </div>
-  </div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
 
-  <main id="top">
-    <header>
-      <div class="wrap">
-        <div class="eyebrow">AI · Biology · Learning · Experiments</div>
-        <h1>Sawyer<br />Van Zanten</h1>
-        <div class="hero-grid">
-          <p class="intro">I build products and research prototypes around difficult problems: learning faster, following through on goals, running AI offline, and understanding how biology changes with age.</p>
-          <p class="hero-note">A selection of things I’ve built, studied, written, and presented.</p>
+  <header class="site-header" id="top">
+    <a class="wordmark" href="#top" aria-label="Home">SVZ<span class="dot">.</span></a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#work">Work</a>
+      <a href="#research">Research</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="header-link" href="https://github.com/recant" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow reveal">BIOLOGY / AI / SOFTWARE / CHEMISTRY</p>
+        <h1 id="hero-title" class="reveal">I like building things that <em>should exist.</em></h1>
+        <p class="hero-deck reveal">I’m Sawyer Van Zanten. I build software and do research across AI, computational chemistry, and the biology of aging.</p>
+        <div class="hero-actions reveal">
+          <a class="button button-primary" href="#work">See selected work <span>↓</span></a>
+          <a class="button button-ghost" href="mailto:sawyervanzanten@gmail.com">Email me <span>↗</span></a>
         </div>
       </div>
-    </header>
 
-    <section id="projects">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-label">01 / Selected projects</div>
-          <h2 class="section-title">Small products with unusually large ambitions.</h2>
-        </div>
-
-        <div class="project-grid">
-          <article class="project feature">
-            <div class="project-top">
-              <div class="kicker">Learning · 2026</div>
-              <h3>Knowable</h3>
-              <p>An open-source, personalized alternative to fixed course apps. Tell Knowable what you want to learn, why you care, and what success looks like; it generates an 8–10 lesson dependency chain with short explanations, predictions, interactive labs, and conceptual checks.</p>
-              <div class="tags">
-                <span class="tag">Gemini 2.5 Flash</span>
-                <span class="tag">Cloudflare</span>
-                <span class="tag">TanStack / React</span>
-                <span class="tag">Every App</span>
-              </div>
-            </div>
-            <a class="project-link" href="https://github.com/recant/Knowable" target="_blank" rel="noreferrer">View project <span>↗</span></a>
-          </article>
-
-          <article class="project side" data-tone="rust">
-            <div class="project-top">
-              <div class="kicker">Agency · 2026</div>
-              <h3>CrushIt</h3>
-              <p>A near-zero-input goal agent. State an outcome once; a persistent agent chooses one concrete action each morning, sets a deadline, and checks evidence. The prototype keeps consequences deterministic and uses a capped simulated commitment balance rather than real charges.</p>
-              <div class="tags">
-                <span class="tag">OpenClaw</span>
-                <span class="tag">Maritime</span>
-                <span class="tag">Goal execution</span>
-              </div>
-            </div>
-            <a class="project-link" href="https://github.com/recant/CrushIt" target="_blank" rel="noreferrer">View project <span>↗</span></a>
-          </article>
-
-          <article class="project" data-tone="blue">
-            <div class="project-top">
-              <div class="kicker">Offline AI · 2026</div>
-              <h3>WildAI</h3>
-              <p>An Android-first wilderness assistant designed to keep working when the internet does not. It uses local multimodal inference to turn a photo and a question into practical outdoor guidance, with the model running on-device rather than through a cloud API.</p>
-              <div class="tags">
-                <span class="tag">React Native</span>
-                <span class="tag">llama.rn</span>
-                <span class="tag">LFM2.5-VL 450M</span>
-                <span class="tag">On-device</span>
-              </div>
-            </div>
-            <a class="project-link" href="https://github.com/recant/WildAI/tree/androidapp" target="_blank" rel="noreferrer">View Android app <span>↗</span></a>
-          </article>
-
-          <article class="project" data-tone="violet">
-            <div class="project-top">
-              <div class="kicker">Longevity hackathon · 2026</div>
-              <h3>Longevitree</h3>
-              <p>A family-friendly functional-aging check-in. Quick at-home reaction-time, walking-pace, and chair-stand tests become simple longitudinal signals, a functional-age estimate, and evidence-linked suggestions for what to try next.</p>
-              <div class="tags">
-                <span class="tag">FastAPI</span>
-                <span class="tag">Functional aging</span>
-                <span class="tag">At-home tests</span>
-              </div>
-            </div>
-            <a class="project-link" href="https://github.com/recant/longevityhackathon" target="_blank" rel="noreferrer">View hackathon project <span>↗</span></a>
-          </article>
+      <div class="hero-lab reveal" aria-hidden="true">
+        <canvas id="signal-canvas"></canvas>
+        <div class="lab-ui">
+          <div class="lab-topline"><span>LIVE SYSTEM</span><span class="status"><i></i> exploring</span></div>
+          <div class="lab-center">
+            <span class="lab-number">07</span>
+            <span class="lab-caption">projects + research<br/>selected for 2026</span>
+          </div>
+          <div class="lab-bottomline"><span>CAMBRIDGE / PASADENA</span><span>40.0°N → 34.1°N</span></div>
         </div>
       </div>
     </section>
 
-    <section id="research">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-label">02 / Research</div>
-          <h2 class="section-title">Chemistry, aging, and interpretable prediction.</h2>
+    <section class="manifesto section-shell reveal" aria-label="Approach">
+      <p class="manifesto-number">01</p>
+      <p>I’m interested in projects where the interface is simple but the underlying problem is not: teach anything, enforce a goal, run useful AI without a network, or measure something about biology that used to be hard to measure.</p>
+    </section>
+
+    <section id="work" class="section-shell work-section">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">SELECTED WORK</p>
+          <h2>Things I’ve built.</h2>
         </div>
+        <p>Experiments, hackathon builds, and product prototypes. Some serious, some deliberately weird.</p>
+      </div>
 
-        <div class="research-list">
-          <article class="research-item">
-            <div class="research-meta">ChemRxiv preprint<br />Sep 2025</div>
-            <div class="research-copy">
-              <h3>Benchmarking OMol25-Trained Models on Experimental Reduction-Potential and Electron-Affinity Data</h3>
-              <p>With Corin C. Wagen. A benchmark of neural-network potentials trained on Meta FAIR’s OMol25 dataset against experimental redox data, including main-group and organometallic systems, with comparisons to more conventional electronic-structure approaches.</p>
+      <div class="project-stack">
+        <article class="project project-knowable reveal" data-tilt>
+          <div class="project-index">01</div>
+          <div class="project-main">
+            <div class="project-meta"><span>AI / EDUCATION</span><span>2026</span></div>
+            <h3>Knowable</h3>
+            <p class="project-lede">A personalized learning app that turns a goal into a course built for exactly one person.</p>
+            <p class="project-body">Tell it what you want to learn, why, and what success looks like. Gemini builds an 8–10 lesson dependency chain with short explanations, predictions, interactive labs, and conceptual checks. Built on TanStack Start, Every App, and Cloudflare Workers.</p>
+            <div class="chips"><span>Gemini 2.5 Flash</span><span>React</span><span>Cloudflare</span><span>Every App</span></div>
+            <a class="text-link" href="https://github.com/recant/Knowable" target="_blank" rel="noreferrer">View repository <span>↗</span></a>
+          </div>
+          <div class="project-visual knowable-visual" aria-hidden="true">
+            <div class="course-window">
+              <div class="mini-window-bar"><i></i><i></i><i></i><span>KNOWABLE / PATH</span></div>
+              <div class="course-title">Learn quantum mechanics</div>
+              <div class="course-line active"><b>01</b><span>Why amplitudes, not probabilities?</span><i></i></div>
+              <div class="course-line"><b>02</b><span>States and superposition</span><i></i></div>
+              <div class="course-line"><b>03</b><span>Measurement</span><i></i></div>
+              <div class="course-line"><b>04</b><span>Operators</span><i></i></div>
+              <div class="course-progress"><span></span></div>
             </div>
-            <a class="research-action" href="https://doi.org/10.26434/chemrxiv-2025-3stpx" target="_blank" rel="noreferrer">Read paper ↗</a>
-          </article>
+          </div>
+        </article>
 
-          <article class="research-item">
-            <div class="research-meta">Grant proposal<br />2026</div>
-            <div class="research-copy">
-              <h3>Viral vectors for selective senescent-cell clearance</h3>
-              <p>A proposal to test whether multiple layers of biological selectivity can make senescent-cell killing safer: uPAR-biased viral entry, GLB1-driven transgene expression, and systematic screening of 18 SCAP-associated gene knockdowns for senescence-selective apoptosis.</p>
+        <article class="project project-crushit reveal" data-tilt>
+          <div class="project-index">02</div>
+          <div class="project-main">
+            <div class="project-meta"><span>AGENTS / PRODUCTIVITY</span><span>2026</span></div>
+            <h3>CrushIt</h3>
+            <p class="project-lede">A near-zero-input goal agent that turns an outcome into one concrete action every morning.</p>
+            <p class="project-body">Each user gets a persistent agent that can inspect connected context, choose a directive, deliver it, check evidence deterministically, and enforce a simulated commitment balance when deadlines are missed.</p>
+            <div class="chips"><span>OpenClaw</span><span>Maritime</span><span>Node</span><span>Agents</span></div>
+            <a class="text-link" href="https://github.com/recant/CrushIt" target="_blank" rel="noreferrer">View repository <span>↗</span></a>
+          </div>
+          <div class="project-visual crushit-visual" aria-hidden="true">
+            <div class="directive-card">
+              <div class="directive-top"><span>TODAY / 08:00</span><span class="pulse-dot"></span></div>
+              <div class="directive-label">YOUR ONE JOB</div>
+              <div class="directive-text">Email three founders before 11:00 AM.</div>
+              <div class="directive-proof"><span>PROOF</span><strong>3 sent messages</strong></div>
+              <div class="directive-footer"><span>deadline 02:41:18</span><span>$25 at stake</span></div>
             </div>
-            <span class="research-action static">Proposal</span>
-          </article>
+          </div>
+        </article>
 
-          <article class="research-item">
-            <div class="research-meta">ACS Fall 2026<br />Presentation</div>
-            <div class="research-copy">
-              <h3>Machine learning optimization of a simple rule for predicting the sign of optical rotation of chiral compounds</h3>
-              <p>Presenting at ACS Fall 2026. The project uses a Reaxys-derived dataset of approximately 13,000 single-stereocenter compounds to optimize an interpretable substituent-ranking heuristic, validate it out of sample, and map where the rule is most and least reliable.</p>
+        <article class="project project-wildai reveal" data-tilt>
+          <div class="project-index">03</div>
+          <div class="project-main">
+            <div class="project-meta"><span>ON-DEVICE AI / MOBILE</span><span>PROTOTYPE</span></div>
+            <h3>WildAI</h3>
+            <p class="project-lede">An offline wilderness assistant that can see your gear and help you figure out what to do with it.</p>
+            <p class="project-body">The phone photographs gear and terrain, identifies what is available, and generates context-aware step-by-step guidance without an internet connection. The design uses a compact vision-language model running locally through llama.cpp.</p>
+            <div class="chips"><span>On-device</span><span>Vision-language</span><span>React Native</span><span>llama.cpp</span></div>
+            <span class="text-link muted-link">Private prototype</span>
+          </div>
+          <div class="project-visual wildai-visual" aria-hidden="true">
+            <div class="wild-phone">
+              <div class="phone-notch"></div>
+              <div class="wild-status"><span>Analyze Scene</span><b>● OFFLINE</b></div>
+              <div class="wild-scene">
+                <div class="mountain m1"></div><div class="mountain m2"></div>
+                <div class="tent-shape"></div>
+                <div class="scan-box scan-one">TENT</div>
+                <div class="scan-box scan-two">PACK</div>
+              </div>
+              <div class="wild-result"><span>DETECTED GEAR</span><b>Tent · Pack · Stove · Boots</b></div>
             </div>
-            <span class="research-action static">ACS Fall 2026</span>
-          </article>
-        </div>
+          </div>
+        </article>
+
+        <article class="project project-longevitree reveal" data-tilt>
+          <div class="project-index">04</div>
+          <div class="project-main">
+            <div class="project-meta"><span>LONGEVITY / HACKATHON</span><span>2026</span></div>
+            <h3>Longevitree</h3>
+            <p class="project-lede">A family-friendly way to make functional aging measurable at home.</p>
+            <p class="project-body">A hackathon prototype built around quick reaction-time, walking-pace, and sit-to-stand check-ins. It estimates functional aging signals and pairs them with evidence-linked, non-medication interventions.</p>
+            <div class="chips"><span>Functional aging</span><span>Python</span><span>FastAPI</span><span>Wellness demo</span></div>
+            <a class="text-link" href="https://github.com/recant/longevityhackathon" target="_blank" rel="noreferrer">View repository <span>↗</span></a>
+          </div>
+          <div class="project-visual longevity-visual" aria-hidden="true">
+            <div class="age-orbit">
+              <div class="age-ring ring-a"></div><div class="age-ring ring-b"></div><div class="age-ring ring-c"></div>
+              <div class="age-core"><small>FUNCTIONAL AGE</small><strong>42.7</strong><span>years</span></div>
+              <div class="age-chip chip-a">REACTION</div><div class="age-chip chip-b">PACE</div><div class="age-chip chip-c">STAND</div>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section>
-      <div class="wrap statement">
-        <p>I’m most interested in tools that compress the distance between knowing something should be possible and actually making it work.</p>
-        <div class="side-note">Current themes: AI-native interfaces, computational biology, longevity, and turning research ideas into usable systems.</div>
+    <section id="research" class="section-shell research-section">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">RESEARCH</p>
+          <h2>Papers, proposals, experiments.</h2>
+        </div>
+        <p>Work across computational chemistry and aging biology, from neural potentials to senescent-cell targeting.</p>
+      </div>
+
+      <div class="research-grid">
+        <article class="research-card feature-paper reveal">
+          <div class="research-top">
+            <span class="research-type">CHEMRXIV PREPRINT · 2025</span>
+            <span class="research-status">PUBLISHED</span>
+          </div>
+          <h3>Benchmarking OMol25-Trained Models on Experimental Reduction-Potential and Electron-Affinity Data</h3>
+          <p>With Corin Wagen. We benchmarked neural network potentials trained on Meta’s OMol25 dataset against low-cost DFT and semiempirical methods on experimental redox data. The models were especially strong on the organometallic sets.</p>
+          <div class="paper-metric-row" aria-hidden="true">
+            <div><span>OMol25</span><b>100M+</b><small>QM calculations in source dataset</small></div>
+            <div><span>TASKS</span><b>02</b><small>reduction potential + electron affinity</small></div>
+            <div><span>FOCUS</span><b>NNP</b><small>zero-shot molecular property prediction</small></div>
+          </div>
+          <a class="text-link" href="https://doi.org/10.26434/chemrxiv-2025-3stpx" target="_blank" rel="noreferrer">Read the preprint <span>↗</span></a>
+        </article>
+
+        <article class="research-card reveal">
+          <div class="research-top">
+            <span class="research-type">ACS FALL 2026</span>
+            <span class="research-status accent">PRESENTING</span>
+          </div>
+          <h3>Machine learning optimization of a simple rule for predicting the sign of optical rotation of chiral compounds</h3>
+          <p>A large-scale test of an interpretable shortcut for optical rotation: optimize a substituent-ranking rule on a Reaxys-derived dataset of roughly 13,000 one-stereocenter compounds, validate it out of sample, and map where the heuristic does and does not work.</p>
+          <div class="mini-plot" aria-hidden="true">
+            <div class="plot-axis y"></div><div class="plot-axis x"></div>
+            <i style="--x:12%;--y:68%"></i><i style="--x:20%;--y:48%"></i><i style="--x:32%;--y:55%"></i><i style="--x:44%;--y:33%"></i><i style="--x:54%;--y:42%"></i><i style="--x:64%;--y:24%"></i><i style="--x:74%;--y:30%"></i><i style="--x:86%;--y:14%"></i>
+            <span>~13,000 compounds</span>
+          </div>
+        </article>
+
+        <article class="research-card reveal">
+          <div class="research-top">
+            <span class="research-type">RESEARCH PROPOSAL · AGING</span>
+            <span class="research-status">VIRAL VECTORS</span>
+          </div>
+          <h3>Selective viral targeting and clearance of senescent cells</h3>
+          <p>A proposed three-layer strategy for senescent-cell selectivity: target uPAR for preferential infection, use the GLB1 promoter for conditional cargo expression, and rank 18 SCAP-associated genes by how selectively their knockdown induces apoptosis.</p>
+          <div class="logic-diagram" aria-hidden="true">
+            <div><small>01</small><b>uPAR</b><span>target</span></div><i>→</i><div><small>02</small><b>GLB1</b><span>gate</span></div><i>→</i><div><small>03</small><b>siRNA</b><span>payload</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about section-shell reveal">
+      <div class="about-number">03</div>
+      <div class="about-copy">
+        <p class="eyebrow">ABOUT</p>
+        <h2>I’m most interested in the gap between a thing being technically possible and somebody actually building it.</h2>
+        <p class="about-body">Right now that mostly means computational biology, longevity, AI-native software, and small experiments that let me learn a new field by making something real.</p>
+      </div>
+      <div class="about-links">
+        <a href="mailto:sawyervanzanten@gmail.com"><span>Email</span><b>sawyervanzanten@gmail.com</b></a>
+        <a href="https://github.com/recant" target="_blank" rel="noreferrer"><span>GitHub</span><b>@recant</b></a>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="wrap footer-grid">
-      <div>© 2026 Sawyer Van Zanten</div>
-      <div><a href="https://github.com/recant" target="_blank" rel="noreferrer">github.com/recant ↗</a></div>
-    </div>
+  <footer class="site-footer section-shell">
+    <span>© <span id="year">2026</span> Sawyer Van Zanten</span>
+    <span>Built from scratch. No template.</span>
+    <a href="#top">Back to top ↑</a>
   </footer>
 </body>
 </html>
