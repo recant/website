@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Sawyer Van Zanten — projects and research in AI, biology, learning, and human performance." />
+  <meta name="theme-color" content="#f4f0e8" />
+  <title>Sawyer Van Zanten</title>
+  <style>
+    :root {
+      --paper: #f4f0e8;
+      --paper-2: #ece6da;
+      --ink: #171714;
+      --muted: #6e6a62;
+      --line: rgba(23, 23, 20, 0.16);
+      --card: rgba(255, 255, 255, 0.48);
+      --green: #245a46;
+      --blue: #254e70;
+      --rust: #8a4935;
+      --violet: #604f79;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 78% 12%, rgba(36, 90, 70, 0.09), transparent 28rem),
+        radial-gradient(circle at 11% 42%, rgba(138, 73, 53, 0.07), transparent 25rem),
+        var(--paper);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.045;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.88' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+      mix-blend-mode: multiply;
+      z-index: 10;
+    }
+
+    a { color: inherit; }
+    ::selection { background: rgba(36, 90, 70, 0.18); }
+
+    .wrap {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(244, 240, 232, 0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .mark {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 22px;
+      font-size: 13px;
+    }
+
+    .navlinks a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .navlinks a:hover { color: var(--ink); }
+
+    header {
+      padding: 116px 0 94px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow,
+    .section-label,
+    .kicker {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 11px;
+      line-height: 1.35;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow { color: var(--green); margin-bottom: 24px; }
+
+    h1,
+    .display {
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      font-weight: 500;
+      letter-spacing: -0.045em;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 930px;
+      font-size: clamp(62px, 9vw, 126px);
+      line-height: 0.88;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.7fr 0.8fr;
+      gap: 56px;
+      align-items: end;
+      margin-top: 56px;
+    }
+
+    .intro {
+      margin: 0;
+      max-width: 720px;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      font-size: clamp(23px, 2.4vw, 34px);
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-note {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 310px;
+      margin: 0;
+    }
+
+    section {
+      padding: 88px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.46fr 1.54fr;
+      gap: 36px;
+      margin-bottom: 44px;
+      align-items: start;
+    }
+
+    .section-label { color: var(--muted); padding-top: 9px; }
+
+    .section-title {
+      margin: 0;
+      max-width: 800px;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      font-size: clamp(38px, 5vw, 68px);
+      line-height: 1.02;
+      font-weight: 500;
+      letter-spacing: -0.035em;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+    }
+
+    .project {
+      position: relative;
+      grid-column: span 6;
+      min-height: 390px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--card);
+      overflow: hidden;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .project:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,0.68);
+      border-color: rgba(23,23,20,0.28);
+    }
+
+    .project.feature { grid-column: span 8; min-height: 430px; }
+    .project.side { grid-column: span 4; min-height: 430px; }
+
+    .project::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 999px;
+      right: -70px;
+      top: -70px;
+      background: var(--wash, rgba(36,90,70,.12));
+      filter: blur(2px);
+      pointer-events: none;
+    }
+
+    .project[data-tone="blue"] { --wash: rgba(37,78,112,.14); }
+    .project[data-tone="rust"] { --wash: rgba(138,73,53,.14); }
+    .project[data-tone="violet"] { --wash: rgba(96,79,121,.14); }
+
+    .project-top { position: relative; z-index: 1; }
+    .kicker { color: var(--muted); margin-bottom: 28px; }
+
+    .project h3 {
+      margin: 0 0 14px;
+      max-width: 620px;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      font-size: clamp(32px, 3.6vw, 52px);
+      line-height: 1.02;
+      font-weight: 500;
+      letter-spacing: -0.035em;
+    }
+
+    .project p {
+      margin: 0;
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      padding: 5px 9px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.04em;
+    }
+
+    .project-link {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      gap: 8px;
+      margin-top: 36px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid currentColor;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .project-link span { transition: transform 160ms ease; }
+    .project-link:hover span { transform: translate(3px, -2px); }
+
+    .research-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .research-item {
+      display: grid;
+      grid-template-columns: 150px 1fr auto;
+      gap: 32px;
+      align-items: start;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .research-meta {
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 10px;
+      line-height: 1.55;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .research-copy h3 {
+      margin: 0 0 9px;
+      max-width: 760px;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      font-size: clamp(27px, 3vw, 42px);
+      line-height: 1.08;
+      font-weight: 500;
+      letter-spacing: -0.025em;
+    }
+
+    .research-copy p {
+      margin: 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .research-action {
+      align-self: center;
+      white-space: nowrap;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 9px 13px;
+      transition: background 160ms ease;
+    }
+
+    .research-action:hover { background: rgba(255,255,255,.55); }
+    .research-action.static { color: var(--muted); font-weight: 500; }
+
+    .statement {
+      display: grid;
+      grid-template-columns: 1.4fr 0.6fr;
+      gap: 60px;
+      align-items: end;
+    }
+
+    .statement p {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      font-size: clamp(34px, 5vw, 72px);
+      line-height: 1.04;
+      letter-spacing: -0.035em;
+    }
+
+    .side-note {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer { padding: 44px 0 70px; }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-grid a { color: var(--ink); text-decoration: none; }
+
+    @media (max-width: 860px) {
+      .hero-grid,
+      .section-head,
+      .statement { grid-template-columns: 1fr; }
+      .hero-grid { gap: 24px; }
+      .section-head { gap: 14px; }
+      .project,
+      .project.feature,
+      .project.side { grid-column: span 12; min-height: 340px; }
+      .research-item { grid-template-columns: 1fr; gap: 12px; }
+      .research-action { justify-self: start; }
+      header { padding-top: 80px; }
+    }
+
+    @media (max-width: 600px) {
+      .wrap { width: min(calc(100% - 26px), var(--max)); }
+      .navlinks { gap: 13px; font-size: 12px; }
+      .navlinks a:nth-child(2) { display: none; }
+      header { padding: 70px 0 68px; }
+      section { padding: 66px 0; }
+      .project { padding: 22px; border-radius: 14px; }
+      .footer-grid { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <nav aria-label="Primary navigation">
+        <a class="mark" href="#top">SVZ / 2026</a>
+        <div class="navlinks">
+          <a href="#projects">Projects</a>
+          <a href="#research">Research</a>
+          <a href="https://github.com/recant" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main id="top">
+    <header>
+      <div class="wrap">
+        <div class="eyebrow">AI · Biology · Learning · Experiments</div>
+        <h1>Sawyer<br />Van Zanten</h1>
+        <div class="hero-grid">
+          <p class="intro">I build products and research prototypes around difficult problems: learning faster, following through on goals, running AI offline, and understanding how biology changes with age.</p>
+          <p class="hero-note">A selection of things I’ve built, studied, written, and presented.</p>
+        </div>
+      </div>
+    </header>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">01 / Selected projects</div>
+          <h2 class="section-title">Small products with unusually large ambitions.</h2>
+        </div>
+
+        <div class="project-grid">
+          <article class="project feature">
+            <div class="project-top">
+              <div class="kicker">Learning · 2026</div>
+              <h3>Knowable</h3>
+              <p>An open-source, personalized alternative to fixed course apps. Tell Knowable what you want to learn, why you care, and what success looks like; it generates an 8–10 lesson dependency chain with short explanations, predictions, interactive labs, and conceptual checks.</p>
+              <div class="tags">
+                <span class="tag">Gemini 2.5 Flash</span>
+                <span class="tag">Cloudflare</span>
+                <span class="tag">TanStack / React</span>
+                <span class="tag">Every App</span>
+              </div>
+            </div>
+            <a class="project-link" href="https://github.com/recant/Knowable" target="_blank" rel="noreferrer">View project <span>↗</span></a>
+          </article>
+
+          <article class="project side" data-tone="rust">
+            <div class="project-top">
+              <div class="kicker">Agency · 2026</div>
+              <h3>CrushIt</h3>
+              <p>A near-zero-input goal agent. State an outcome once; a persistent agent chooses one concrete action each morning, sets a deadline, and checks evidence. The prototype keeps consequences deterministic and uses a capped simulated commitment balance rather than real charges.</p>
+              <div class="tags">
+                <span class="tag">OpenClaw</span>
+                <span class="tag">Maritime</span>
+                <span class="tag">Goal execution</span>
+              </div>
+            </div>
+            <a class="project-link" href="https://github.com/recant/CrushIt" target="_blank" rel="noreferrer">View project <span>↗</span></a>
+          </article>
+
+          <article class="project" data-tone="blue">
+            <div class="project-top">
+              <div class="kicker">Offline AI · 2026</div>
+              <h3>WildAI</h3>
+              <p>An Android-first wilderness assistant designed to keep working when the internet does not. It uses local multimodal inference to turn a photo and a question into practical outdoor guidance, with the model running on-device rather than through a cloud API.</p>
+              <div class="tags">
+                <span class="tag">React Native</span>
+                <span class="tag">llama.rn</span>
+                <span class="tag">LFM2.5-VL 450M</span>
+                <span class="tag">On-device</span>
+              </div>
+            </div>
+            <a class="project-link" href="https://github.com/recant/WildAI/tree/androidapp" target="_blank" rel="noreferrer">View Android app <span>↗</span></a>
+          </article>
+
+          <article class="project" data-tone="violet">
+            <div class="project-top">
+              <div class="kicker">Longevity hackathon · 2026</div>
+              <h3>Longevitree</h3>
+              <p>A family-friendly functional-aging check-in. Quick at-home reaction-time, walking-pace, and chair-stand tests become simple longitudinal signals, a functional-age estimate, and evidence-linked suggestions for what to try next.</p>
+              <div class="tags">
+                <span class="tag">FastAPI</span>
+                <span class="tag">Functional aging</span>
+                <span class="tag">At-home tests</span>
+              </div>
+            </div>
+            <a class="project-link" href="https://github.com/recant/longevityhackathon" target="_blank" rel="noreferrer">View hackathon project <span>↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">02 / Research</div>
+          <h2 class="section-title">Chemistry, aging, and interpretable prediction.</h2>
+        </div>
+
+        <div class="research-list">
+          <article class="research-item">
+            <div class="research-meta">ChemRxiv preprint<br />Sep 2025</div>
+            <div class="research-copy">
+              <h3>Benchmarking OMol25-Trained Models on Experimental Reduction-Potential and Electron-Affinity Data</h3>
+              <p>With Corin C. Wagen. A benchmark of neural-network potentials trained on Meta FAIR’s OMol25 dataset against experimental redox data, including main-group and organometallic systems, with comparisons to more conventional electronic-structure approaches.</p>
+            </div>
+            <a class="research-action" href="https://doi.org/10.26434/chemrxiv-2025-3stpx" target="_blank" rel="noreferrer">Read paper ↗</a>
+          </article>
+
+          <article class="research-item">
+            <div class="research-meta">Grant proposal<br />2026</div>
+            <div class="research-copy">
+              <h3>Viral vectors for selective senescent-cell clearance</h3>
+              <p>A proposal to test whether multiple layers of biological selectivity can make senescent-cell killing safer: uPAR-biased viral entry, GLB1-driven transgene expression, and systematic screening of 18 SCAP-associated gene knockdowns for senescence-selective apoptosis.</p>
+            </div>
+            <span class="research-action static">Proposal</span>
+          </article>
+
+          <article class="research-item">
+            <div class="research-meta">ACS Fall 2026<br />Presentation</div>
+            <div class="research-copy">
+              <h3>Machine learning optimization of a simple rule for predicting the sign of optical rotation of chiral compounds</h3>
+              <p>Presenting at ACS Fall 2026. The project uses a Reaxys-derived dataset of approximately 13,000 single-stereocenter compounds to optimize an interpretable substituent-ranking heuristic, validate it out of sample, and map where the rule is most and least reliable.</p>
+            </div>
+            <span class="research-action static">ACS Fall 2026</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap statement">
+        <p>I’m most interested in tools that compress the distance between knowing something should be possible and actually making it work.</p>
+        <div class="side-note">Current themes: AI-native interfaces, computational biology, longevity, and turning research ideas into usable systems.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>© 2026 Sawyer Van Zanten</div>
+      <div><a href="https://github.com/recant" target="_blank" rel="noreferrer">github.com/recant ↗</a></div>
+    </div>
+  </footer>
+</body>
+</html>
