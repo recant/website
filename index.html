@@ -9,37 +9,41 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="page" id="top">
-    <header class="site-header">
-      <a class="brand" href="#top">Sawyer VanZanten</a>
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      <a class="monogram" href="#top" aria-label="Back to top">SV</a>
+      <h1>Sawyer VanZanten</h1>
+      <p class="sidebar-kicker">Software, computational biology, chemistry, and AI.</p>
+
       <nav aria-label="Primary navigation">
         <a href="#projects">Projects</a>
         <a href="#research">Research</a>
         <a href="#about">About</a>
-        <a href="https://github.com/recant" target="_blank" rel="noreferrer">GitHub</a>
       </nav>
-    </header>
 
-    <main>
-      <section class="intro">
-        <h1>Sawyer VanZanten</h1>
-        <p>I build software and do research in computational biology, chemistry, and AI.</p>
-        <p class="intro-secondary">I tend to learn things by making projects out of them.</p>
-        <p class="contact"><a href="mailto:sawyervanzanten@gmail.com">sawyervanzanten@gmail.com</a></p>
-      </section>
+      <div class="sidebar-links">
+        <a href="mailto:sawyervanzanten@gmail.com">Email</a>
+        <a href="https://github.com/recant" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </aside>
 
-      <section id="projects" class="section">
-        <h2>Projects</h2>
+  <main class="main" id="top">
+    <section class="intro">
+      <p class="overline">Hello</p>
+      <h2>I like turning things I want to understand into things I can build.</h2>
+      <p>I work on software and research projects across computational biology, chemistry, AI, and longevity. Some are serious research projects; some are prototypes I made because I wanted to see whether an idea would actually work.</p>
+    </section>
 
-        <article class="entry">
-          <div class="entry-meta">2026<br><span>AI / education</span></div>
-          <div class="entry-copy">
-            <h3>Knowable</h3>
-            <p>A personalized learning app. You tell it what you want to learn and what success looks like; it builds a short course with explanations, interactive labs, predictions, and conceptual checks.</p>
-            <p class="small">Gemini 2.5 Flash · TanStack Start · React · Cloudflare Workers · Every App</p>
-            <p class="links"><a href="https://github.com/recant/Knowable" target="_blank" rel="noreferrer">source</a></p>
-          </div>
-          <figure class="thumb" aria-label="Knowable interface thumbnail">
+    <section id="projects" class="section">
+      <div class="section-heading">
+        <h2>Selected projects</h2>
+        <p>Recent things I have built or prototyped.</p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project">
+          <figure class="project-art" aria-label="Knowable interface thumbnail">
             <svg viewBox="0 0 320 210" role="img">
               <rect width="320" height="210" fill="#f4f1ea"/>
               <rect x="18" y="20" width="284" height="170" fill="#fff" stroke="#cfc8bd"/>
@@ -55,17 +59,16 @@
               <text x="41" y="167" font-family="Arial" font-size="12" fill="#555">03 · Translation</text>
             </svg>
           </figure>
+          <div class="project-copy">
+            <div class="project-meta">2026 · AI / education</div>
+            <h3>Knowable</h3>
+            <p>A personalized learning app that turns a learning goal into a short course with explanations, interactive labs, predictions, and conceptual checks.</p>
+            <a href="https://github.com/recant/Knowable" target="_blank" rel="noreferrer">Source ↗</a>
+          </div>
         </article>
 
-        <article class="entry">
-          <div class="entry-meta">2026<br><span>AI agents</span></div>
-          <div class="entry-copy">
-            <h3>CrushIt</h3>
-            <p>A goal agent that asks for an outcome once, then chooses one concrete action each morning. It can use connected context, send the directive, verify evidence, and apply a simulated commitment penalty when a deadline is missed.</p>
-            <p class="small">Node.js · Maritime · OpenClaw · persistent agents</p>
-            <p class="links"><a href="https://github.com/recant/CrushIt" target="_blank" rel="noreferrer">source</a></p>
-          </div>
-          <figure class="thumb" aria-label="CrushIt interface thumbnail">
+        <article class="project">
+          <figure class="project-art" aria-label="CrushIt interface thumbnail">
             <svg viewBox="0 0 320 210" role="img">
               <rect width="320" height="210" fill="#eef2f5"/>
               <rect x="24" y="22" width="272" height="166" fill="#fff" stroke="#cbd4dc"/>
@@ -79,17 +82,16 @@
               <text x="276" y="172" text-anchor="end" font-family="Arial" font-size="11" font-weight="700" fill="#222">$25</text>
             </svg>
           </figure>
+          <div class="project-copy">
+            <div class="project-meta">2026 · AI agents</div>
+            <h3>CrushIt</h3>
+            <p>A goal agent that chooses one concrete action each morning, uses connected context, checks evidence, and applies a simulated commitment penalty when a deadline is missed.</p>
+            <a href="https://github.com/recant/CrushIt" target="_blank" rel="noreferrer">Source ↗</a>
+          </div>
         </article>
 
-        <article class="entry">
-          <div class="entry-meta">Prototype<br><span>on-device AI</span></div>
-          <div class="entry-copy">
-            <h3>WildAI</h3>
-            <p>An offline wilderness assistant. It uses a phone camera to identify gear and surroundings, then produces step-by-step guidance with a small vision-language model running locally.</p>
-            <p class="small">React Native · llama.cpp · vision-language models</p>
-            <p class="small">Private prototype.</p>
-          </div>
-          <figure class="thumb" aria-label="WildAI thumbnail">
+        <article class="project">
+          <figure class="project-art" aria-label="WildAI thumbnail">
             <svg viewBox="0 0 320 210" role="img">
               <rect width="320" height="210" fill="#e8efeb"/>
               <path d="M0 171L75 92l58 54 57-70 130 134H0z" fill="#617b69"/>
@@ -104,17 +106,16 @@
               <text x="181" y="125" text-anchor="middle" font-family="Arial" font-size="9" fill="#fff">TENT</text>
             </svg>
           </figure>
+          <div class="project-copy">
+            <div class="project-meta">Prototype · on-device AI</div>
+            <h3>WildAI</h3>
+            <p>An offline wilderness assistant that uses a phone camera to identify gear and surroundings, then gives step-by-step guidance with a small vision-language model running locally.</p>
+            <span class="muted">Private prototype</span>
+          </div>
         </article>
 
-        <article class="entry">
-          <div class="entry-meta">2026<br><span>longevity hackathon</span></div>
-          <div class="entry-copy">
-            <h3>Longevitree</h3>
-            <p>A prototype for at-home functional-aging check-ins using reaction time, walking pace, and sit-to-stand tests. It estimates functional aging signals and links them to evidence-backed, non-medication interventions.</p>
-            <p class="small">Python · FastAPI · functional aging</p>
-            <p class="links"><a href="https://github.com/recant/longevityhackathon" target="_blank" rel="noreferrer">source</a></p>
-          </div>
-          <figure class="thumb" aria-label="Longevitree thumbnail">
+        <article class="project">
+          <figure class="project-art" aria-label="Longevitree thumbnail">
             <svg viewBox="0 0 320 210" role="img">
               <rect width="320" height="210" fill="#f4f0ed"/>
               <circle cx="90" cy="105" r="55" fill="#fff" stroke="#d9c9c0"/>
@@ -129,21 +130,25 @@
               <rect x="176" y="153" width="100" height="8" fill="#e6d8d0"/><rect x="176" y="153" width="78" height="8" fill="#b77b5b"/>
             </svg>
           </figure>
-        </article>
-      </section>
-
-      <section id="research" class="section">
-        <h2>Research</h2>
-
-        <article class="entry">
-          <div class="entry-meta">2025<br><span>ChemRxiv</span></div>
-          <div class="entry-copy">
-            <h3>Benchmarking OMol25-Trained Models on Experimental Reduction-Potential and Electron-Affinity Data</h3>
-            <p class="small">with Corin Wagen</p>
-            <p>We benchmarked neural network potentials trained on Meta’s OMol25 dataset against lower-cost quantum-chemical methods on experimental reduction-potential and electron-affinity data.</p>
-            <p class="links"><a href="https://doi.org/10.26434/chemrxiv-2025-3stpx" target="_blank" rel="noreferrer">preprint</a></p>
+          <div class="project-copy">
+            <div class="project-meta">2026 · longevity hackathon</div>
+            <h3>Longevitree</h3>
+            <p>An at-home functional-aging prototype using reaction time, walking pace, and sit-to-stand tests, with evidence-linked non-medication interventions.</p>
+            <a href="https://github.com/recant/longevityhackathon" target="_blank" rel="noreferrer">Source ↗</a>
           </div>
-          <figure class="thumb" aria-label="OMol25 research thumbnail">
+        </article>
+      </div>
+    </section>
+
+    <section id="research" class="section">
+      <div class="section-heading">
+        <h2>Research</h2>
+        <p>Papers, abstracts, and proposals.</p>
+      </div>
+
+      <div class="research-list">
+        <article class="research">
+          <figure class="research-art" aria-label="OMol25 research thumbnail">
             <svg viewBox="0 0 320 210" role="img">
               <rect width="320" height="210" fill="#f4f4f4"/>
               <g transform="translate(38,42)" stroke="#7a7a7a" stroke-width="2.5"><line x1="0" y1="18" x2="28" y2="0"/><line x1="28" y1="0" x2="58" y2="17"/><line x1="58" y1="17" x2="49" y2="48"/><line x1="49" y1="48" x2="15" y2="54"/><line x1="15" y1="54" x2="0" y2="18"/></g>
@@ -154,66 +159,83 @@
               <text x="178" y="184" font-family="Arial" font-size="11" fill="#666">experiment → prediction</text>
             </svg>
           </figure>
+          <div>
+            <div class="project-meta">ChemRxiv · 2025 · with Corin Wagen</div>
+            <h3>Benchmarking OMol25-Trained Models on Experimental Reduction-Potential and Electron-Affinity Data</h3>
+            <p>We benchmarked neural network potentials trained on Meta’s OMol25 dataset against lower-cost quantum-chemical methods on experimental reduction-potential and electron-affinity data.</p>
+            <a href="https://doi.org/10.26434/chemrxiv-2025-3stpx" target="_blank" rel="noreferrer">Read preprint ↗</a>
+          </div>
         </article>
 
-        <article class="entry">
-          <div class="entry-meta">2026<br><span>ACS Fall</span></div>
-          <div class="entry-copy">
-            <h3>Machine learning optimization of a simple rule for predicting the sign of optical rotation of chiral compounds</h3>
-            <p class="small">Presenting at ACS Fall 2026</p>
-            <p>We assembled a Reaxys-derived dataset of about 13,000 compounds with one stereogenic center and experimentally reported optical-rotation signs, then used machine-learning optimization to improve and evaluate a simple substituent-ranking rule.</p>
-            <p class="links"><a href="https://docs.google.com/document/d/1gj6hJZGkeKxrxaBewzFp7AXgk-JntTfAGj2xWqQ45ts/edit?usp=sharing" target="_blank" rel="noreferrer">abstract</a></p>
-          </div>
-          <figure class="thumb" aria-label="Optical rotation research thumbnail">
+        <article class="research">
+          <figure class="research-art" aria-label="Optical rotation research thumbnail">
             <svg viewBox="0 0 320 210" role="img">
               <rect width="320" height="210" fill="#f4f4f4"/>
               <circle cx="112" cy="104" r="10" fill="#34434e"/><circle cx="74" cy="70" r="7" fill="#bd8062"/><circle cx="149" cy="67" r="7" fill="#71889e"/><circle cx="75" cy="140" r="7" fill="#8b9b72"/><circle cx="151" cy="142" r="7" fill="#9e879e"/>
               <line x1="112" y1="104" x2="74" y2="70" stroke="#6f7c85" stroke-width="2.5"/><line x1="112" y1="104" x2="149" y2="67" stroke="#6f7c85" stroke-width="2.5"/><line x1="112" y1="104" x2="75" y2="140" stroke="#6f7c85" stroke-width="2.5"/><line x1="112" y1="104" x2="151" y2="142" stroke="#6f7c85" stroke-width="2.5"/>
               <text x="112" y="108" text-anchor="middle" font-family="Arial" font-size="10" fill="#fff">C*</text>
-              <path d="M206 80c25 0 49 10 56 31 5 18-4 33-25 42" fill="none" stroke="#536a80" stroke-width="3" stroke-linecap="round"/><path d="M243 145l-12 9 18 3" fill="none" stroke="#536a80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <text x="219" y="60" font-family="Georgia" font-size="20" fill="#536a80">+/−</text><text x="205" y="182" font-family="Arial" font-size="11" fill="#666">predict rotation sign</text>
+              <path d="M206 80c25 0 49 10 56 31 5 18-4 33-25 42" fill="none" stroke="#536a80" stroke-width="3" stroke-linecap="round"/>
+              <path d="M243 145l-12 9 18 3" fill="none" stroke="#536a80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="219" y="60" font-family="Georgia" font-size="20" fill="#536a80">+/−</text>
+              <text x="205" y="182" font-family="Arial" font-size="11" fill="#666">predict rotation sign</text>
             </svg>
           </figure>
+          <div>
+            <div class="project-meta">ACS Fall 2026 · presenting</div>
+            <h3>Machine learning optimization of a simple rule for predicting the sign of optical rotation of chiral compounds</h3>
+            <p>We assembled a Reaxys-derived dataset of about 13,000 compounds with one stereogenic center and experimentally reported optical-rotation signs, then used machine-learning optimization to improve and evaluate a simple substituent-ranking rule.</p>
+            <a href="https://docs.google.com/document/d/1gj6hJZGkeKxrxaBewzFp7AXgk-JntTfAGj2xWqQ45ts/edit?usp=sharing" target="_blank" rel="noreferrer">Read abstract ↗</a>
+          </div>
         </article>
 
-        <article class="entry">
-          <div class="entry-meta">2026<br><span>proposal</span></div>
-          <div class="entry-copy">
+        <article class="research">
+          <figure class="research-art" aria-label="Senescent-cell proposal thumbnail">
+            <svg viewBox="0 0 320 210" role="img">
+              <rect width="320" height="210" fill="#f4f4f4"/>
+              <circle cx="70" cy="104" r="22" fill="#c98665" stroke="#a96345"/>
+              <g stroke="#a96345" stroke-width="2" fill="#c98665"><line x1="70" y1="66" x2="70" y2="53"/><circle cx="70" cy="49" r="4"/><line x1="100" y1="77" x2="111" y2="67"/><circle cx="114" cy="64" r="4"/><line x1="108" y1="104" x2="122" y2="104"/><circle cx="126" cy="104" r="4"/><line x1="100" y1="131" x2="111" y2="141"/><circle cx="114" cy="144" r="4"/><line x1="70" y1="142" x2="70" y2="155"/><circle cx="70" cy="159" r="4"/></g>
+              <path d="M116 104h32" stroke="#45634f" stroke-width="3"/><path d="M140 96l9 8-9 8" fill="none" stroke="#45634f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="170" y="56" width="116" height="98" fill="#fff" stroke="#d6d6d6"/>
+              <text x="181" y="78" font-family="Arial" font-size="10" font-weight="700" fill="#45634f">TARGET → GATE → PAYLOAD</text>
+              <rect x="182" y="92" width="72" height="14" fill="#e1e9e3"/><text x="190" y="103" font-family="Arial" font-size="10" fill="#45634f">uPAR targeting</text>
+              <rect x="182" y="112" width="60" height="14" fill="#e8eadc"/><text x="190" y="123" font-family="Arial" font-size="10" fill="#686d48">GLB1 gate</text>
+              <rect x="182" y="132" width="80" height="14" fill="#eee3dd"/><text x="190" y="143" font-family="Arial" font-size="10" fill="#8a604a">siRNA cargo</text>
+            </svg>
+          </figure>
+          <div>
+            <div class="project-meta">Research proposal · aging</div>
             <h3>Selective viral targeting and clearance of senescent cells</h3>
             <p>A proposed strategy for selectively killing senescent cells using uPAR-targeted viral infection, GLB1-driven cargo expression, and siRNA knockdown of candidate senescent-cell anti-apoptotic genes.</p>
-            <p class="links"><a href="https://docs.google.com/document/d/1yONIsCsziop6arxNgFfb-FmM9GbEO5m2DiNGWUt1WTM/edit?usp=sharing" target="_blank" rel="noreferrer">proposal</a> · <button class="details-button" type="button" aria-expanded="false" aria-controls="proposal-details">details</button></p>
+            <p class="research-links">
+              <a href="https://docs.google.com/document/d/1yONIsCsziop6arxNgFfb-FmM9GbEO5m2DiNGWUt1WTM/edit?usp=sharing" target="_blank" rel="noreferrer">View proposal ↗</a>
+              <button class="details-button" type="button" aria-expanded="false" aria-controls="proposal-details">details</button>
+            </p>
             <div id="proposal-details" class="details" hidden>
               <p>The proposal has three aims: test uPAR as an infection target, test the GLB1 promoter for senescence-selective expression, and rank 18 SCAP-associated genes by how strongly their knockdown induces apoptosis in senescent versus non-senescent cells.</p>
             </div>
           </div>
-          <figure class="thumb" aria-label="Senescent cell proposal thumbnail">
-            <svg viewBox="0 0 320 210" role="img">
-              <rect width="320" height="210" fill="#f4f4f4"/>
-              <circle cx="70" cy="104" r="22" fill="#cf8c6b" stroke="#a96f53"/>
-              <g stroke="#a96f53" stroke-width="2" fill="#cf8c6b"><line x1="70" y1="66" x2="70" y2="53"/><circle cx="70" cy="49" r="4"/><line x1="100" y1="77" x2="111" y2="67"/><circle cx="114" cy="64" r="4"/><line x1="108" y1="104" x2="122" y2="104"/><circle cx="126" cy="104" r="4"/><line x1="100" y1="131" x2="111" y2="141"/><circle cx="114" cy="144" r="4"/><line x1="70" y1="142" x2="70" y2="155"/><circle cx="70" cy="159" r="4"/><line x1="40" y1="131" x2="29" y2="141"/><circle cx="26" cy="144" r="4"/><line x1="32" y1="104" x2="18" y2="104"/><circle cx="14" cy="104" r="4"/><line x1="40" y1="77" x2="29" y2="67"/><circle cx="26" cy="64" r="4"/></g>
-              <path d="M116 104h32" stroke="#506f59" stroke-width="3"/><path d="M140 96l9 8-9 8" fill="none" stroke="#506f59" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <rect x="170" y="56" width="116" height="98" fill="#fff" stroke="#d8d8d8"/><text x="182" y="78" font-family="Arial" font-size="11" font-weight="700" fill="#506f59">TARGET → GATE → PAYLOAD</text>
-              <rect x="182" y="92" width="72" height="14" fill="#e4ece6"/><text x="190" y="103" font-family="Arial" font-size="10" fill="#506f59">uPAR targeting</text>
-              <rect x="182" y="112" width="60" height="14" fill="#ececdd"/><text x="190" y="123" font-family="Arial" font-size="10" fill="#74734d">GLB1 gate</text>
-              <rect x="182" y="132" width="80" height="14" fill="#eee3de"/><text x="190" y="143" font-family="Arial" font-size="10" fill="#8f6652">siRNA cargo</text>
-            </svg>
-          </figure>
         </article>
-      </section>
+      </div>
+    </section>
 
-      <section id="about" class="section about">
+    <section id="about" class="section about">
+      <div class="section-heading">
         <h2>About</h2>
-        <div class="about-copy">
-          <p>I’m interested in computational biology, chemistry, longevity, and software. In practice, that usually means a mix of research projects, prototypes, and tools that help me understand a problem more concretely.</p>
-          <p>I’m especially drawn to projects where the surface can stay simple while the underlying question is actually hard.</p>
+      </div>
+      <div class="about-grid">
+        <p>I’m interested in computational biology, chemistry, longevity, and software. I’m especially drawn to projects where the underlying problem is technically difficult but the thing a person actually uses can stay simple.</p>
+        <div class="contact-block">
+          <strong>Contact</strong>
+          <a href="mailto:sawyervanzanten@gmail.com">sawyervanzanten@gmail.com</a>
+          <a href="https://github.com/recant" target="_blank" rel="noreferrer">github.com/recant</a>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
     <footer>
       <span>© <span id="year"></span> Sawyer VanZanten</span>
-      <a href="#top">top</a>
+      <span>Layout inspired by <a href="https://html5up.net/strata" target="_blank" rel="noreferrer">Strata by HTML5 UP</a>.</span>
     </footer>
-  </div>
+  </main>
 </body>
 </html>
