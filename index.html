@@ -3,19 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Sawyer VanZanten — projects and research in software, biology, chemistry, and AI." />
+  <meta name="description" content="Sawyer VanZanten — projects and research in software, computational biology, chemistry, and AI." />
   <title>Sawyer VanZanten</title>
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="page">
-    <header class="site-header" id="top">
+  <div class="page" id="top">
+    <header class="site-header">
       <a class="brand" href="#top">Sawyer VanZanten</a>
       <nav aria-label="Primary navigation">
         <a href="#projects">Projects</a>
         <a href="#research">Research</a>
-        <a href="#game">Game</a>
         <a href="#about">About</a>
         <a href="https://github.com/recant" target="_blank" rel="noreferrer">GitHub</a>
       </nav>
@@ -24,260 +23,186 @@
     <main>
       <section class="intro">
         <h1>Sawyer VanZanten</h1>
-        <p class="intro-main">I build software and do research in computational biology, chemistry, and AI.</p>
-        <p class="intro-sub">Most of my projects start because I get interested in a question and would rather make something than just think about it in the abstract.</p>
-        <p class="contact"><a href="mailto:sawyervanzanten@gmail.com">sawyervanzanten@gmail.com</a> · <a href="https://github.com/recant" target="_blank" rel="noreferrer">github.com/recant</a></p>
+        <p>I build software and do research in computational biology, chemistry, and AI.</p>
+        <p class="intro-secondary">I tend to learn things by making projects out of them.</p>
+        <p class="contact"><a href="mailto:sawyervanzanten@gmail.com">sawyervanzanten@gmail.com</a></p>
       </section>
 
       <section id="projects" class="section">
-        <header class="section-header">
-          <h2>Projects</h2>
-          <p>Things I’ve built or prototyped.</p>
-        </header>
+        <h2>Projects</h2>
 
         <article class="entry">
-          <div class="entry-meta">2026<br />AI / education</div>
-          <div class="entry-body">
+          <div class="entry-meta">2026<br><span>AI / education</span></div>
+          <div class="entry-copy">
             <h3>Knowable</h3>
             <p>A personalized learning app. You tell it what you want to learn and what success looks like; it builds a short course with explanations, interactive labs, predictions, and conceptual checks.</p>
-            <p class="entry-note">Gemini 2.5 Flash · TanStack Start · React · Cloudflare Workers · Every App</p>
-            <p class="entry-links"><a href="https://github.com/recant/Knowable" target="_blank" rel="noreferrer">Repository</a></p>
+            <p class="small">Gemini 2.5 Flash · TanStack Start · React · Cloudflare Workers · Every App</p>
+            <p class="links"><a href="https://github.com/recant/Knowable" target="_blank" rel="noreferrer">source</a></p>
           </div>
-          <figure class="entry-thumb" aria-label="Knowable interface thumbnail">
+          <figure class="thumb" aria-label="Knowable interface thumbnail">
             <svg viewBox="0 0 320 210" role="img">
-              <rect width="320" height="210" fill="#f5f1e9"/>
-              <rect x="16" y="18" width="288" height="174" fill="#ffffff" stroke="#d8d1c7"/>
-              <rect x="16" y="18" width="288" height="26" fill="#ece3d2" stroke="#d8d1c7"/>
-              <circle cx="32" cy="31" r="4" fill="#b8a996"/>
-              <circle cx="45" cy="31" r="4" fill="#b8a996"/>
-              <circle cx="58" cy="31" r="4" fill="#b8a996"/>
-              <text x="28" y="66" font-family="Arial" font-size="18" font-weight="700" fill="#222">Learn molecular biology</text>
-              <rect x="28" y="82" width="264" height="28" fill="#f1ebdf" stroke="#d7cdbb"/>
-              <text x="40" y="100" font-family="Arial" font-size="12" fill="#222">01 · DNA as information</text>
-              <circle cx="274" cy="96" r="6" fill="#346b49"/>
-              <rect x="28" y="118" width="264" height="24" fill="#fff" stroke="#dfd8cf"/>
-              <text x="40" y="134" font-family="Arial" font-size="12" fill="#555">02 · Transcription</text>
-              <rect x="28" y="150" width="264" height="24" fill="#fff" stroke="#dfd8cf"/>
-              <text x="40" y="166" font-family="Arial" font-size="12" fill="#555">03 · Translation</text>
+              <rect width="320" height="210" fill="#f4f1ea"/>
+              <rect x="18" y="20" width="284" height="170" fill="#fff" stroke="#cfc8bd"/>
+              <rect x="18" y="20" width="284" height="25" fill="#e9e1d3" stroke="#cfc8bd"/>
+              <circle cx="34" cy="32" r="4" fill="#aea395"/><circle cx="47" cy="32" r="4" fill="#aea395"/><circle cx="60" cy="32" r="4" fill="#aea395"/>
+              <text x="30" y="69" font-family="Arial" font-size="17" font-weight="700" fill="#222">Learn molecular biology</text>
+              <rect x="30" y="84" width="260" height="27" fill="#eee7db" stroke="#d8cdbb"/>
+              <text x="41" y="102" font-family="Arial" font-size="12" fill="#222">01 · DNA as information</text>
+              <circle cx="274" cy="97" r="6" fill="#416b50"/>
+              <rect x="30" y="119" width="260" height="24" fill="#fff" stroke="#ddd7cf"/>
+              <text x="41" y="135" font-family="Arial" font-size="12" fill="#555">02 · Transcription</text>
+              <rect x="30" y="151" width="260" height="24" fill="#fff" stroke="#ddd7cf"/>
+              <text x="41" y="167" font-family="Arial" font-size="12" fill="#555">03 · Translation</text>
             </svg>
           </figure>
         </article>
 
         <article class="entry">
-          <div class="entry-meta">2026<br />AI agents</div>
-          <div class="entry-body">
+          <div class="entry-meta">2026<br><span>AI agents</span></div>
+          <div class="entry-copy">
             <h3>CrushIt</h3>
             <p>A goal agent that asks for an outcome once, then chooses one concrete action each morning. It can use connected context, send the directive, verify evidence, and apply a simulated commitment penalty when a deadline is missed.</p>
-            <p class="entry-note">Node.js · Maritime · OpenClaw · persistent agents</p>
-            <p class="entry-links"><a href="https://github.com/recant/CrushIt" target="_blank" rel="noreferrer">Repository</a></p>
+            <p class="small">Node.js · Maritime · OpenClaw · persistent agents</p>
+            <p class="links"><a href="https://github.com/recant/CrushIt" target="_blank" rel="noreferrer">source</a></p>
           </div>
-          <figure class="entry-thumb" aria-label="CrushIt interface thumbnail">
+          <figure class="thumb" aria-label="CrushIt interface thumbnail">
             <svg viewBox="0 0 320 210" role="img">
-              <rect width="320" height="210" fill="#eef3f7"/>
-              <rect x="24" y="20" width="272" height="170" fill="#fff" stroke="#ccd6df"/>
-              <text x="42" y="47" font-family="Arial" font-size="10" font-weight="700" letter-spacing="1" fill="#6b8094">TODAY'S ACTION</text>
-              <text x="42" y="79" font-family="Arial" font-size="18" font-weight="700" fill="#222">Email three founders</text>
-              <text x="42" y="102" font-family="Arial" font-size="18" font-weight="700" fill="#222">before 11 AM.</text>
-              <line x1="42" y1="126" x2="278" y2="126" stroke="#d6dee6"/>
-              <text x="42" y="149" font-family="Arial" font-size="11" fill="#666">Proof</text>
-              <text x="276" y="149" text-anchor="end" font-family="Arial" font-size="11" font-weight="700" fill="#222">3 sent messages</text>
-              <text x="42" y="171" font-family="Arial" font-size="11" fill="#666">At stake</text>
-              <text x="276" y="171" text-anchor="end" font-family="Arial" font-size="11" font-weight="700" fill="#222">$25</text>
+              <rect width="320" height="210" fill="#eef2f5"/>
+              <rect x="24" y="22" width="272" height="166" fill="#fff" stroke="#cbd4dc"/>
+              <text x="42" y="50" font-family="Arial" font-size="10" font-weight="700" fill="#687f92">TODAY'S ACTION</text>
+              <text x="42" y="82" font-family="Arial" font-size="18" font-weight="700" fill="#222">Email three founders</text>
+              <text x="42" y="105" font-family="Arial" font-size="18" font-weight="700" fill="#222">before 11 AM.</text>
+              <line x1="42" y1="128" x2="278" y2="128" stroke="#d7dfe5"/>
+              <text x="42" y="151" font-family="Arial" font-size="11" fill="#666">Proof</text>
+              <text x="276" y="151" text-anchor="end" font-family="Arial" font-size="11" font-weight="700" fill="#222">3 sent messages</text>
+              <text x="42" y="172" font-family="Arial" font-size="11" fill="#666">At stake</text>
+              <text x="276" y="172" text-anchor="end" font-family="Arial" font-size="11" font-weight="700" fill="#222">$25</text>
             </svg>
           </figure>
         </article>
 
         <article class="entry">
-          <div class="entry-meta">Prototype<br />on-device AI</div>
-          <div class="entry-body">
+          <div class="entry-meta">Prototype<br><span>on-device AI</span></div>
+          <div class="entry-copy">
             <h3>WildAI</h3>
             <p>An offline wilderness assistant. It uses a phone camera to identify gear and surroundings, then produces step-by-step guidance with a small vision-language model running locally.</p>
-            <p class="entry-note">React Native · llama.cpp · vision-language models</p>
-            <p class="entry-note">Private prototype.</p>
+            <p class="small">React Native · llama.cpp · vision-language models</p>
+            <p class="small">Private prototype.</p>
           </div>
-          <figure class="entry-thumb" aria-label="WildAI thumbnail">
+          <figure class="thumb" aria-label="WildAI thumbnail">
             <svg viewBox="0 0 320 210" role="img">
-              <rect width="320" height="210" fill="#e6efe9"/>
-              <path d="M0 168L78 88l56 55 56-69 130 136H0z" fill="#5a7b66"/>
-              <path d="M0 188L100 122l47 34 55-43 118 97H0z" fill="#355641"/>
-              <rect x="110" y="20" width="100" height="170" rx="18" fill="#202624"/>
-              <rect x="118" y="31" width="84" height="148" rx="10" fill="#d5e5dc"/>
-              <rect x="26" y="28" width="90" height="28" fill="#ffffff" stroke="#cbd9d1"/>
-              <text x="71" y="46" text-anchor="middle" font-family="Arial" font-size="11" font-weight="700" fill="#31503f">OFFLINE</text>
-              <rect x="130" y="66" width="35" height="16" fill="none" stroke="#fff" stroke-width="2"/>
-              <text x="147" y="78" text-anchor="middle" font-family="Arial" font-size="9" fill="#fff">PACK</text>
-              <rect x="166" y="112" width="30" height="16" fill="none" stroke="#fff" stroke-width="2"/>
-              <text x="181" y="124" text-anchor="middle" font-family="Arial" font-size="9" fill="#fff">TENT</text>
+              <rect width="320" height="210" fill="#e8efeb"/>
+              <path d="M0 171L75 92l58 54 57-70 130 134H0z" fill="#617b69"/>
+              <path d="M0 190L96 125l51 34 57-43 116 94H0z" fill="#3d5948"/>
+              <rect x="111" y="21" width="98" height="169" rx="16" fill="#252a27"/>
+              <rect x="119" y="32" width="82" height="147" rx="9" fill="#d3e0d8"/>
+              <rect x="24" y="27" width="87" height="27" fill="#fff" stroke="#c8d4cc"/>
+              <text x="67" y="45" text-anchor="middle" font-family="Arial" font-size="11" font-weight="700" fill="#38513f">OFFLINE</text>
+              <rect x="130" y="65" width="34" height="16" fill="none" stroke="#fff" stroke-width="2"/>
+              <text x="147" y="77" text-anchor="middle" font-family="Arial" font-size="9" fill="#fff">PACK</text>
+              <rect x="166" y="113" width="30" height="16" fill="none" stroke="#fff" stroke-width="2"/>
+              <text x="181" y="125" text-anchor="middle" font-family="Arial" font-size="9" fill="#fff">TENT</text>
             </svg>
           </figure>
         </article>
 
         <article class="entry">
-          <div class="entry-meta">2026<br />longevity hackathon</div>
-          <div class="entry-body">
+          <div class="entry-meta">2026<br><span>longevity hackathon</span></div>
+          <div class="entry-copy">
             <h3>Longevitree</h3>
-            <p>A prototype for at-home functional aging check-ins using reaction time, walking pace, and sit-to-stand tests. It estimates functional aging signals and links them to evidence-backed, non-medication interventions.</p>
-            <p class="entry-note">Python · FastAPI · functional aging</p>
-            <p class="entry-links"><a href="https://github.com/recant/longevityhackathon" target="_blank" rel="noreferrer">Repository</a></p>
+            <p>A prototype for at-home functional-aging check-ins using reaction time, walking pace, and sit-to-stand tests. It estimates functional aging signals and links them to evidence-backed, non-medication interventions.</p>
+            <p class="small">Python · FastAPI · functional aging</p>
+            <p class="links"><a href="https://github.com/recant/longevityhackathon" target="_blank" rel="noreferrer">source</a></p>
           </div>
-          <figure class="entry-thumb" aria-label="Longevitree thumbnail">
+          <figure class="thumb" aria-label="Longevitree thumbnail">
             <svg viewBox="0 0 320 210" role="img">
-              <rect width="320" height="210" fill="#f6f0eb"/>
-              <circle cx="90" cy="105" r="56" fill="#fff" stroke="#dfc9bc"/>
-              <text x="56" y="87" font-family="Arial" font-size="10" font-weight="700" fill="#8d644a">FUNCTIONAL AGE</text>
+              <rect width="320" height="210" fill="#f4f0ed"/>
+              <circle cx="90" cy="105" r="55" fill="#fff" stroke="#d9c9c0"/>
+              <text x="57" y="87" font-family="Arial" font-size="10" font-weight="700" fill="#7d604f">FUNCTIONAL AGE</text>
               <text x="58" y="122" font-family="Arial" font-size="34" font-weight="700" fill="#222">42.7</text>
-              <text x="76" y="138" font-family="Arial" font-size="12" fill="#666">years</text>
+              <text x="77" y="138" font-family="Arial" font-size="12" fill="#666">years</text>
               <text x="176" y="78" font-family="Arial" font-size="11" fill="#666">Reaction time</text>
-              <rect x="176" y="85" width="100" height="8" fill="#ead8cd"/>
-              <rect x="176" y="85" width="68" height="8" fill="#bf7a53"/>
+              <rect x="176" y="85" width="100" height="8" fill="#e6d8d0"/><rect x="176" y="85" width="68" height="8" fill="#b77b5b"/>
               <text x="176" y="112" font-family="Arial" font-size="11" fill="#666">Walking pace</text>
-              <rect x="176" y="119" width="100" height="8" fill="#ead8cd"/>
-              <rect x="176" y="119" width="58" height="8" fill="#bf7a53"/>
+              <rect x="176" y="119" width="100" height="8" fill="#e6d8d0"/><rect x="176" y="119" width="58" height="8" fill="#b77b5b"/>
               <text x="176" y="146" font-family="Arial" font-size="11" fill="#666">Sit-to-stand</text>
-              <rect x="176" y="153" width="100" height="8" fill="#ead8cd"/>
-              <rect x="176" y="153" width="78" height="8" fill="#bf7a53"/>
+              <rect x="176" y="153" width="100" height="8" fill="#e6d8d0"/><rect x="176" y="153" width="78" height="8" fill="#b77b5b"/>
             </svg>
           </figure>
         </article>
       </section>
 
       <section id="research" class="section">
-        <header class="section-header">
-          <h2>Research</h2>
-          <p>Papers, abstracts, and proposals.</p>
-        </header>
+        <h2>Research</h2>
 
         <article class="entry">
-          <div class="entry-meta">ChemRxiv<br />2025</div>
-          <div class="entry-body">
+          <div class="entry-meta">2025<br><span>ChemRxiv</span></div>
+          <div class="entry-copy">
             <h3>Benchmarking OMol25-Trained Models on Experimental Reduction-Potential and Electron-Affinity Data</h3>
-            <p>With Corin Wagen. We benchmarked neural network potentials trained on Meta’s OMol25 dataset against lower-cost quantum-chemical methods on experimental reduction-potential and electron-affinity data.</p>
-            <p class="entry-links"><a href="https://doi.org/10.26434/chemrxiv-2025-3stpx" target="_blank" rel="noreferrer">Preprint</a></p>
+            <p class="small">with Corin Wagen</p>
+            <p>We benchmarked neural network potentials trained on Meta’s OMol25 dataset against lower-cost quantum-chemical methods on experimental reduction-potential and electron-affinity data.</p>
+            <p class="links"><a href="https://doi.org/10.26434/chemrxiv-2025-3stpx" target="_blank" rel="noreferrer">preprint</a></p>
           </div>
-          <figure class="entry-thumb" aria-label="OMol25 research thumbnail">
+          <figure class="thumb" aria-label="OMol25 research thumbnail">
             <svg viewBox="0 0 320 210" role="img">
-              <rect width="320" height="210" fill="#f5f5f5"/>
-              <g transform="translate(38,42)" stroke="#7a7a7a" stroke-width="2.5">
-                <line x1="0" y1="18" x2="28" y2="0"/>
-                <line x1="28" y1="0" x2="58" y2="17"/>
-                <line x1="58" y1="17" x2="49" y2="48"/>
-                <line x1="49" y1="48" x2="15" y2="54"/>
-                <line x1="15" y1="54" x2="0" y2="18"/>
-              </g>
-              <g transform="translate(38,42)">
-                <circle cx="0" cy="18" r="6" fill="#7d6b93"/>
-                <circle cx="28" cy="0" r="6" fill="#7d6b93"/>
-                <circle cx="58" cy="17" r="6" fill="#7d6b93"/>
-                <circle cx="49" cy="48" r="6" fill="#7d6b93"/>
-                <circle cx="15" cy="54" r="6" fill="#7d6b93"/>
-                <circle cx="29" cy="27" r="8" fill="#cc7d59"/>
-              </g>
-              <line x1="170" y1="162" x2="290" y2="162" stroke="#a8a8a8"/>
-              <line x1="170" y1="162" x2="170" y2="62" stroke="#a8a8a8"/>
-              <polyline points="178,151 197,139 216,127 234,112 250,98 270,83 288,70" fill="none" stroke="#4e6886" stroke-width="3"/>
-              <g fill="#4e6886">
-                <circle cx="197" cy="139" r="3.5"/>
-                <circle cx="216" cy="127" r="3.5"/>
-                <circle cx="234" cy="112" r="3.5"/>
-                <circle cx="250" cy="98" r="3.5"/>
-                <circle cx="270" cy="83" r="3.5"/>
-              </g>
-              <text x="178" y="184" font-family="Arial" font-size="11" fill="#666">experiment → model prediction</text>
+              <rect width="320" height="210" fill="#f4f4f4"/>
+              <g transform="translate(38,42)" stroke="#7a7a7a" stroke-width="2.5"><line x1="0" y1="18" x2="28" y2="0"/><line x1="28" y1="0" x2="58" y2="17"/><line x1="58" y1="17" x2="49" y2="48"/><line x1="49" y1="48" x2="15" y2="54"/><line x1="15" y1="54" x2="0" y2="18"/></g>
+              <g transform="translate(38,42)"><circle cx="0" cy="18" r="6" fill="#796c8a"/><circle cx="28" cy="0" r="6" fill="#796c8a"/><circle cx="58" cy="17" r="6" fill="#796c8a"/><circle cx="49" cy="48" r="6" fill="#796c8a"/><circle cx="15" cy="54" r="6" fill="#796c8a"/><circle cx="29" cy="27" r="8" fill="#bd8062"/></g>
+              <line x1="170" y1="162" x2="290" y2="162" stroke="#a8a8a8"/><line x1="170" y1="162" x2="170" y2="62" stroke="#a8a8a8"/>
+              <polyline points="178,151 197,139 216,127 234,112 250,98 270,83 288,70" fill="none" stroke="#536a80" stroke-width="3"/>
+              <g fill="#536a80"><circle cx="197" cy="139" r="3.5"/><circle cx="216" cy="127" r="3.5"/><circle cx="234" cy="112" r="3.5"/><circle cx="250" cy="98" r="3.5"/><circle cx="270" cy="83" r="3.5"/></g>
+              <text x="178" y="184" font-family="Arial" font-size="11" fill="#666">experiment → prediction</text>
             </svg>
           </figure>
         </article>
 
         <article class="entry">
-          <div class="entry-meta">ACS Fall<br />2026</div>
-          <div class="entry-body">
+          <div class="entry-meta">2026<br><span>ACS Fall</span></div>
+          <div class="entry-copy">
             <h3>Machine learning optimization of a simple rule for predicting the sign of optical rotation of chiral compounds</h3>
+            <p class="small">Presenting at ACS Fall 2026</p>
             <p>We assembled a Reaxys-derived dataset of about 13,000 compounds with one stereogenic center and experimentally reported optical-rotation signs, then used machine-learning optimization to improve and evaluate a simple substituent-ranking rule.</p>
-            <p class="entry-links"><a href="https://docs.google.com/document/d/1gj6hJZGkeKxrxaBewzFp7AXgk-JntTfAGj2xWqQ45ts/edit?usp=sharing" target="_blank" rel="noreferrer">Abstract</a> · <span>Presenting at ACS Fall 2026</span></p>
+            <p class="links"><a href="https://docs.google.com/document/d/1gj6hJZGkeKxrxaBewzFp7AXgk-JntTfAGj2xWqQ45ts/edit?usp=sharing" target="_blank" rel="noreferrer">abstract</a></p>
           </div>
-          <figure class="entry-thumb" aria-label="Optical rotation research thumbnail">
+          <figure class="thumb" aria-label="Optical rotation research thumbnail">
             <svg viewBox="0 0 320 210" role="img">
-              <rect width="320" height="210" fill="#f5f5f5"/>
-              <circle cx="112" cy="104" r="10" fill="#2d3e4c"/>
-              <circle cx="74" cy="70" r="7" fill="#cc7d59"/>
-              <circle cx="149" cy="67" r="7" fill="#6a89a6"/>
-              <circle cx="75" cy="140" r="7" fill="#89a16b"/>
-              <circle cx="151" cy="142" r="7" fill="#af87af"/>
-              <line x1="112" y1="104" x2="74" y2="70" stroke="#677a87" stroke-width="2.5"/>
-              <line x1="112" y1="104" x2="149" y2="67" stroke="#677a87" stroke-width="2.5"/>
-              <line x1="112" y1="104" x2="75" y2="140" stroke="#677a87" stroke-width="2.5"/>
-              <line x1="112" y1="104" x2="151" y2="142" stroke="#677a87" stroke-width="2.5"/>
+              <rect width="320" height="210" fill="#f4f4f4"/>
+              <circle cx="112" cy="104" r="10" fill="#34434e"/><circle cx="74" cy="70" r="7" fill="#bd8062"/><circle cx="149" cy="67" r="7" fill="#71889e"/><circle cx="75" cy="140" r="7" fill="#8b9b72"/><circle cx="151" cy="142" r="7" fill="#9e879e"/>
+              <line x1="112" y1="104" x2="74" y2="70" stroke="#6f7c85" stroke-width="2.5"/><line x1="112" y1="104" x2="149" y2="67" stroke="#6f7c85" stroke-width="2.5"/><line x1="112" y1="104" x2="75" y2="140" stroke="#6f7c85" stroke-width="2.5"/><line x1="112" y1="104" x2="151" y2="142" stroke="#6f7c85" stroke-width="2.5"/>
               <text x="112" y="108" text-anchor="middle" font-family="Arial" font-size="10" fill="#fff">C*</text>
-              <path d="M206 80c25 0 49 10 56 31 5 18-4 33-25 42" fill="none" stroke="#4e6886" stroke-width="3" stroke-linecap="round"/>
-              <path d="M243 145l-12 9 18 3" fill="none" stroke="#4e6886" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <text x="219" y="60" font-family="Georgia" font-size="20" fill="#4e6886">+/−</text>
-              <text x="205" y="182" font-family="Arial" font-size="11" fill="#666">predict rotation sign</text>
+              <path d="M206 80c25 0 49 10 56 31 5 18-4 33-25 42" fill="none" stroke="#536a80" stroke-width="3" stroke-linecap="round"/><path d="M243 145l-12 9 18 3" fill="none" stroke="#536a80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="219" y="60" font-family="Georgia" font-size="20" fill="#536a80">+/−</text><text x="205" y="182" font-family="Arial" font-size="11" fill="#666">predict rotation sign</text>
             </svg>
           </figure>
         </article>
 
         <article class="entry">
-          <div class="entry-meta">Proposal<br />aging</div>
-          <div class="entry-body">
+          <div class="entry-meta">2026<br><span>proposal</span></div>
+          <div class="entry-copy">
             <h3>Selective viral targeting and clearance of senescent cells</h3>
             <p>A proposed strategy for selectively killing senescent cells using uPAR-targeted viral infection, GLB1-driven cargo expression, and siRNA knockdown of candidate senescent-cell anti-apoptotic genes.</p>
-            <p class="entry-links"><a href="https://docs.google.com/document/d/1yONIsCsziop6arxNgFfb-FmM9GbEO5m2DiNGWUt1WTM/edit?usp=sharing" target="_blank" rel="noreferrer">Proposal</a> · <button class="details-button" type="button" aria-expanded="false" aria-controls="proposal-details">More details</button></p>
+            <p class="links"><a href="https://docs.google.com/document/d/1yONIsCsziop6arxNgFfb-FmM9GbEO5m2DiNGWUt1WTM/edit?usp=sharing" target="_blank" rel="noreferrer">proposal</a> · <button class="details-button" type="button" aria-expanded="false" aria-controls="proposal-details">details</button></p>
             <div id="proposal-details" class="details" hidden>
               <p>The proposal has three aims: test uPAR as an infection target, test the GLB1 promoter for senescence-selective expression, and rank 18 SCAP-associated genes by how strongly their knockdown induces apoptosis in senescent versus non-senescent cells.</p>
             </div>
           </div>
-          <figure class="entry-thumb" aria-label="Senescent cell proposal thumbnail">
+          <figure class="thumb" aria-label="Senescent cell proposal thumbnail">
             <svg viewBox="0 0 320 210" role="img">
-              <rect width="320" height="210" fill="#f5f5f5"/>
-              <circle cx="70" cy="104" r="22" fill="#d88b67" stroke="#b76a46"/>
-              <g stroke="#b76a46" stroke-width="2" fill="#d88b67">
-                <line x1="70" y1="66" x2="70" y2="53"/><circle cx="70" cy="49" r="4"/>
-                <line x1="100" y1="77" x2="111" y2="67"/><circle cx="114" cy="64" r="4"/>
-                <line x1="108" y1="104" x2="122" y2="104"/><circle cx="126" cy="104" r="4"/>
-                <line x1="100" y1="131" x2="111" y2="141"/><circle cx="114" cy="144" r="4"/>
-                <line x1="70" y1="142" x2="70" y2="155"/><circle cx="70" cy="159" r="4"/>
-                <line x1="40" y1="131" x2="29" y2="141"/><circle cx="26" cy="144" r="4"/>
-                <line x1="32" y1="104" x2="18" y2="104"/><circle cx="14" cy="104" r="4"/>
-                <line x1="40" y1="77" x2="29" y2="67"/><circle cx="26" cy="64" r="4"/>
-              </g>
-              <path d="M116 104h32" stroke="#3f6d4f" stroke-width="3"/>
-              <path d="M140 96l9 8-9 8" fill="none" stroke="#3f6d4f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <rect x="170" y="56" width="116" height="98" fill="#fff" stroke="#d8d8d8"/>
-              <text x="182" y="78" font-family="Arial" font-size="11" font-weight="700" fill="#3f6d4f">TARGET → GATE → PAYLOAD</text>
-              <rect x="182" y="92" width="72" height="14" fill="#e2eee6"/>
-              <text x="190" y="103" font-family="Arial" font-size="10" fill="#3f6d4f">uPAR targeting</text>
-              <rect x="182" y="112" width="60" height="14" fill="#edf0dc"/>
-              <text x="190" y="123" font-family="Arial" font-size="10" fill="#6e7542">GLB1 gate</text>
-              <rect x="182" y="132" width="80" height="14" fill="#f3e5de"/>
-              <text x="190" y="143" font-family="Arial" font-size="10" fill="#985f46">siRNA cargo</text>
+              <rect width="320" height="210" fill="#f4f4f4"/>
+              <circle cx="70" cy="104" r="22" fill="#cf8c6b" stroke="#a96f53"/>
+              <g stroke="#a96f53" stroke-width="2" fill="#cf8c6b"><line x1="70" y1="66" x2="70" y2="53"/><circle cx="70" cy="49" r="4"/><line x1="100" y1="77" x2="111" y2="67"/><circle cx="114" cy="64" r="4"/><line x1="108" y1="104" x2="122" y2="104"/><circle cx="126" cy="104" r="4"/><line x1="100" y1="131" x2="111" y2="141"/><circle cx="114" cy="144" r="4"/><line x1="70" y1="142" x2="70" y2="155"/><circle cx="70" cy="159" r="4"/><line x1="40" y1="131" x2="29" y2="141"/><circle cx="26" cy="144" r="4"/><line x1="32" y1="104" x2="18" y2="104"/><circle cx="14" cy="104" r="4"/><line x1="40" y1="77" x2="29" y2="67"/><circle cx="26" cy="64" r="4"/></g>
+              <path d="M116 104h32" stroke="#506f59" stroke-width="3"/><path d="M140 96l9 8-9 8" fill="none" stroke="#506f59" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="170" y="56" width="116" height="98" fill="#fff" stroke="#d8d8d8"/><text x="182" y="78" font-family="Arial" font-size="11" font-weight="700" fill="#506f59">TARGET → GATE → PAYLOAD</text>
+              <rect x="182" y="92" width="72" height="14" fill="#e4ece6"/><text x="190" y="103" font-family="Arial" font-size="10" fill="#506f59">uPAR targeting</text>
+              <rect x="182" y="112" width="60" height="14" fill="#ececdd"/><text x="190" y="123" font-family="Arial" font-size="10" fill="#74734d">GLB1 gate</text>
+              <rect x="182" y="132" width="80" height="14" fill="#eee3de"/><text x="190" y="143" font-family="Arial" font-size="10" fill="#8f6652">siRNA cargo</text>
             </svg>
           </figure>
         </article>
       </section>
 
-      <section id="game" class="section">
-        <header class="section-header">
-          <h2>Small thing to play with</h2>
-          <p>A tiny reaction-time game.</p>
-        </header>
-
-        <div class="game-block">
-          <div class="game-copy">
-            <p>Click <strong>Start</strong>, wait for the box to turn green, then click as fast as you can. I put this here partly because I like little interactive things, and partly because reaction time keeps showing up in aging projects.</p>
-            <p class="game-stats">Last time: <span id="last-time">—</span><br />Best time: <span id="best-time">—</span></p>
-          </div>
-
-          <div class="game-panel">
-            <button id="reaction-start" class="game-button" type="button">Start</button>
-            <div id="reaction-status" class="game-status">Press start, then wait for green.</div>
-            <button id="reaction-area" class="reaction-area is-idle" type="button" aria-live="polite">wait…</button>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="section">
-        <header class="section-header">
-          <h2>About</h2>
-        </header>
+      <section id="about" class="section about">
+        <h2>About</h2>
         <div class="about-copy">
           <p>I’m interested in computational biology, chemistry, longevity, and software. In practice, that usually means a mix of research projects, prototypes, and tools that help me understand a problem more concretely.</p>
           <p>I’m especially drawn to projects where the surface can stay simple while the underlying question is actually hard.</p>
@@ -285,9 +210,9 @@
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer>
       <span>© <span id="year"></span> Sawyer VanZanten</span>
-      <a href="mailto:sawyervanzanten@gmail.com">sawyervanzanten@gmail.com</a>
+      <a href="#top">top</a>
     </footer>
   </div>
 </body>
